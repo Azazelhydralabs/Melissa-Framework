@@ -1,0 +1,347 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:skill-definition:v1",
+  "description": "CODE-01 structural definition only. Rust semantic validation is additionally required; this schema grants no authority and implements no runtime.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.skill-definition/v1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "module": {
+      "enum": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit",
+        "grid"
+      ]
+    },
+    "name_tr": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description_tr": {
+      "type": "string",
+      "minLength": 1
+    },
+    "use_when": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "manifest": {
+      "$ref": "#/$defs/manifest"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/file"
+      },
+      "minItems": 1
+    },
+    "scripts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/script"
+      },
+      "minItems": 0
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/template"
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "module",
+    "name_tr",
+    "description_tr",
+    "use_when",
+    "manifest",
+    "files",
+    "scripts",
+    "templates"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "runtime_limits": {
+      "type": "object",
+      "properties": {
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_parallel_tools": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_cost_micro_usd": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "timeout_seconds",
+        "max_iterations",
+        "max_parallel_tools",
+        "max_cost_micro_usd"
+      ],
+      "additionalProperties": false
+    },
+    "file": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        },
+        "role": {
+          "enum": [
+            "entrypoint",
+            "script",
+            "reference",
+            "asset",
+            "schema",
+            "evaluation",
+            "test",
+            "template"
+          ]
+        }
+      },
+      "required": [
+        "path",
+        "content_digest",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "script": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "interpreter_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_schema_ref": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "output_schema_ref": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "file_path",
+        "interpreter_ref",
+        "input_schema_ref",
+        "output_schema_ref",
+        "required_capabilities",
+        "timeout_seconds"
+      ],
+      "additionalProperties": false
+    },
+    "template": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "input_schema_ref": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "output_schema_ref": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        }
+      },
+      "required": [
+        "file_path",
+        "input_schema_ref",
+        "output_schema_ref"
+      ],
+      "additionalProperties": false
+    },
+    "manifest": {
+      "type": "object",
+      "properties": {
+        "entrypoint": {
+          "const": "SKILL.md"
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trust_level": {
+          "enum": [
+            "first_party",
+            "reviewed_third_party",
+            "untrusted"
+          ]
+        },
+        "routing": {
+          "type": "object",
+          "properties": {
+            "intents": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "priority": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "intents",
+            "priority"
+          ],
+          "additionalProperties": false
+        },
+        "required_tools": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "runtime": {
+          "$ref": "#/$defs/runtime_limits"
+        },
+        "input_schema_ref": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "output_schema_ref": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+        },
+        "verification": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "check": {
+                "type": "string",
+                "minLength": 1
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "check",
+              "required"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "evaluation": {
+          "type": "object",
+          "properties": {
+            "dataset_ref": {
+              "type": "string",
+              "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+            },
+            "assertions_ref": {
+              "type": "string",
+              "pattern": "^(?!/)(?!.*(?:\\\\|:))(?!.*(?:^|/)\\.{1,2}(?:/|$))[^/]+(?:/[^/]+)*$"
+            },
+            "min_success_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "dataset_ref",
+            "assertions_ref",
+            "min_success_rate"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "entrypoint",
+        "category",
+        "trust_level",
+        "routing",
+        "required_tools",
+        "required_capabilities",
+        "prerequisites",
+        "runtime",
+        "input_schema_ref",
+        "output_schema_ref",
+        "verification",
+        "evaluation"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

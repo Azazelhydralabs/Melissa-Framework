@@ -1,0 +1,20 @@
+{
+  "schema_version": "melissa.process-exec/v1",
+  "executable": "C:\\verified-fixture\\probe.exe",
+  "argv": ["ok", "literal ; & | $(text)"],
+  "cwd": ".",
+  "env": {"MELISSA_VISIBLE": "explicit-only"},
+  "limits": {
+    "wall_time_ms": 5000,
+    "cpu_time_ms": 3000,
+    "cpu_mode": "monitored_total",
+    "memory_bytes": 134217728,
+    "disk_bytes": 67108864,
+    "disk_mode": "monitored",
+    "output_bytes": 65536,
+    "max_processes": 8,
+    "network": "deny"
+  },
+  "effects": ["process.execute_scoped", "workspace.apply_patch_scoped"],
+  "worker_type": "generic"
+}

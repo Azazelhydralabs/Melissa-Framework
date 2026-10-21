@@ -1,0 +1,377 @@
+{
+  "schema_version": "melissa.agent-index/v1",
+  "profiles": [
+    {
+      "id": "melissa.code.architect",
+      "module": "code",
+      "name_tr": "Yazılım Mimarisi Uzmanı",
+      "path": "catalog/agents/code/architect.json"
+    },
+    {
+      "id": "melissa.code.backend",
+      "module": "code",
+      "name_tr": "Backend Geliştirme Uzmanı",
+      "path": "catalog/agents/code/backend.json"
+    },
+    {
+      "id": "melissa.code.database",
+      "module": "code",
+      "name_tr": "Veritabanı Geliştirme Uzmanı",
+      "path": "catalog/agents/code/database.json"
+    },
+    {
+      "id": "melissa.code.debugger",
+      "module": "code",
+      "name_tr": "Hata Tanılama ve Toparlama Uzmanı",
+      "path": "catalog/agents/code/debugger.json"
+    },
+    {
+      "id": "melissa.code.dependency-build",
+      "module": "code",
+      "name_tr": "Bağımlılık ve Derleme Uzmanı",
+      "path": "catalog/agents/code/dependency-build.json"
+    },
+    {
+      "id": "melissa.code.frontend",
+      "module": "code",
+      "name_tr": "Frontend Geliştirme Uzmanı",
+      "path": "catalog/agents/code/frontend.json"
+    },
+    {
+      "id": "melissa.code.implementer",
+      "module": "code",
+      "name_tr": "Yazılım Uygulama Uzmanı",
+      "path": "catalog/agents/code/implementer.json"
+    },
+    {
+      "id": "melissa.code.release-engineer",
+      "module": "code",
+      "name_tr": "Uygulama Sürüm ve Artifact Uzmanı",
+      "path": "catalog/agents/code/release-engineer.json"
+    },
+    {
+      "id": "melissa.code.repository-analyst",
+      "module": "code",
+      "name_tr": "Repository Analizi Uzmanı",
+      "path": "catalog/agents/code/repository-analyst.json"
+    },
+    {
+      "id": "melissa.code.reviewer",
+      "module": "code",
+      "name_tr": "Kod İnceleme Uzmanı",
+      "path": "catalog/agents/code/reviewer.json"
+    },
+    {
+      "id": "melissa.code.security-reviewer",
+      "module": "code",
+      "name_tr": "Kod Güvenliği İnceleme Uzmanı",
+      "path": "catalog/agents/code/security-reviewer.json"
+    },
+    {
+      "id": "melissa.code.test-engineer",
+      "module": "code",
+      "name_tr": "Test Mühendisliği Uzmanı",
+      "path": "catalog/agents/code/test-engineer.json"
+    },
+    {
+      "id": "melissa.core.coordinator",
+      "module": "core",
+      "name_tr": "Ana Koordinatör",
+      "path": "catalog/agents/core/coordinator.json"
+    },
+    {
+      "id": "melissa.core.data-documents",
+      "module": "core",
+      "name_tr": "Veri ve Belge Uzmanı",
+      "path": "catalog/agents/core/data-documents.json"
+    },
+    {
+      "id": "melissa.core.independent-qa",
+      "module": "core",
+      "name_tr": "Bağımsız Kabul ve Kalite Uzmanı",
+      "path": "catalog/agents/core/independent-qa.json"
+    },
+    {
+      "id": "melissa.core.integration",
+      "module": "core",
+      "name_tr": "Modül ve Sözleşme Entegrasyonu Uzmanı",
+      "path": "catalog/agents/core/integration.json"
+    },
+    {
+      "id": "melissa.core.planner",
+      "module": "core",
+      "name_tr": "Görev Planlama Uzmanı",
+      "path": "catalog/agents/core/planner.json"
+    },
+    {
+      "id": "melissa.core.researcher",
+      "module": "core",
+      "name_tr": "Araştırma Uzmanı",
+      "path": "catalog/agents/core/researcher.json"
+    },
+    {
+      "id": "melissa.cyber.api-appsec",
+      "module": "cyber",
+      "name_tr": "API Güvenliği",
+      "path": "catalog/agents/cyber/api-appsec.json"
+    },
+    {
+      "id": "melissa.cyber.asset-inventory",
+      "module": "cyber",
+      "name_tr": "İzinli Varlık Envanteri",
+      "path": "catalog/agents/cyber/asset-inventory.json"
+    },
+    {
+      "id": "melissa.cyber.attack-graph",
+      "module": "cyber",
+      "name_tr": "Saldırı Grafı Analizi",
+      "path": "catalog/agents/cyber/attack-graph.json"
+    },
+    {
+      "id": "melissa.cyber.authentication",
+      "module": "cyber",
+      "name_tr": "Kimlik Doğrulama Analizi",
+      "path": "catalog/agents/cyber/authentication.json"
+    },
+    {
+      "id": "melissa.cyber.authorization",
+      "module": "cyber",
+      "name_tr": "Yetkilendirme Analizi",
+      "path": "catalog/agents/cyber/authorization.json"
+    },
+    {
+      "id": "melissa.cyber.cloud-security",
+      "module": "cyber",
+      "name_tr": "Bulut Güvenliği",
+      "path": "catalog/agents/cyber/cloud-security.json"
+    },
+    {
+      "id": "melissa.cyber.container-security",
+      "module": "cyber",
+      "name_tr": "Container Güvenliği",
+      "path": "catalog/agents/cyber/container-security.json"
+    },
+    {
+      "id": "melissa.cyber.dependency-security",
+      "module": "cyber",
+      "name_tr": "Bağımlılık Güvenliği",
+      "path": "catalog/agents/cyber/dependency-security.json"
+    },
+    {
+      "id": "melissa.cyber.detection-validation",
+      "module": "cyber",
+      "name_tr": "Algılama Doğrulama",
+      "path": "catalog/agents/cyber/detection-validation.json"
+    },
+    {
+      "id": "melissa.cyber.emulation-planner",
+      "module": "cyber",
+      "name_tr": "Adversary Emülasyon Planlama",
+      "path": "catalog/agents/cyber/emulation-planner.json"
+    },
+    {
+      "id": "melissa.cyber.engagement-controller",
+      "module": "cyber",
+      "name_tr": "Engagement Kapsam Kontrolü",
+      "path": "catalog/agents/cyber/engagement-controller.json"
+    },
+    {
+      "id": "melissa.cyber.finding-verifier",
+      "module": "cyber",
+      "name_tr": "Bağımsız Bulgu Doğrulama",
+      "path": "catalog/agents/cyber/finding-verifier.json"
+    },
+    {
+      "id": "melissa.cyber.fuzzing",
+      "module": "cyber",
+      "name_tr": "Fuzzing Mühendisliği",
+      "path": "catalog/agents/cyber/fuzzing.json"
+    },
+    {
+      "id": "melissa.cyber.linux-security",
+      "module": "cyber",
+      "name_tr": "Linux Güvenliği",
+      "path": "catalog/agents/cyber/linux-security.json"
+    },
+    {
+      "id": "melissa.cyber.network-security",
+      "module": "cyber",
+      "name_tr": "Ağ Güvenliği",
+      "path": "catalog/agents/cyber/network-security.json"
+    },
+    {
+      "id": "melissa.cyber.remediation",
+      "module": "cyber",
+      "name_tr": "Güvenlik Düzeltme Planlama",
+      "path": "catalog/agents/cyber/remediation.json"
+    },
+    {
+      "id": "melissa.cyber.researcher",
+      "module": "cyber",
+      "name_tr": "Güvenlik Araştırması",
+      "path": "catalog/agents/cyber/researcher.json"
+    },
+    {
+      "id": "melissa.cyber.reverse-engineering",
+      "module": "cyber",
+      "name_tr": "Tersine Mühendislik Analizi",
+      "path": "catalog/agents/cyber/reverse-engineering.json"
+    },
+    {
+      "id": "melissa.cyber.source-security",
+      "module": "cyber",
+      "name_tr": "Kaynak Kod Güvenliği",
+      "path": "catalog/agents/cyber/source-security.json"
+    },
+    {
+      "id": "melissa.cyber.surface-mapper",
+      "module": "cyber",
+      "name_tr": "İzinli Yüzey Haritalama",
+      "path": "catalog/agents/cyber/surface-mapper.json"
+    },
+    {
+      "id": "melissa.cyber.technology-analyst",
+      "module": "cyber",
+      "name_tr": "Teknoloji ve Sürüm Analizi",
+      "path": "catalog/agents/cyber/technology-analyst.json"
+    },
+    {
+      "id": "melissa.cyber.threat-intelligence",
+      "module": "cyber",
+      "name_tr": "Tehdit İstihbaratı",
+      "path": "catalog/agents/cyber/threat-intelligence.json"
+    },
+    {
+      "id": "melissa.cyber.vulnerability-triage",
+      "module": "cyber",
+      "name_tr": "Zafiyet Önceliklendirme",
+      "path": "catalog/agents/cyber/vulnerability-triage.json"
+    },
+    {
+      "id": "melissa.cyber.web-appsec",
+      "module": "cyber",
+      "name_tr": "Web Uygulaması Güvenliği",
+      "path": "catalog/agents/cyber/web-appsec.json"
+    },
+    {
+      "id": "melissa.cyber.windows-security",
+      "module": "cyber",
+      "name_tr": "Windows Güvenliği",
+      "path": "catalog/agents/cyber/windows-security.json"
+    },
+    {
+      "id": "melissa.fit.installation-qa",
+      "module": "fit",
+      "name_tr": "Kurulum ve Uyumluluk Kalitesi",
+      "path": "catalog/agents/fit/installation-qa.json"
+    },
+    {
+      "id": "melissa.fit.installer-engineer",
+      "module": "fit",
+      "name_tr": "Kurulum ve Güncelleme Mühendisi",
+      "path": "catalog/agents/fit/installer-engineer.json"
+    },
+    {
+      "id": "melissa.fit.release-distribution",
+      "module": "fit",
+      "name_tr": "Sürüm ve Dağıtım",
+      "path": "catalog/agents/fit/release-distribution.json"
+    },
+    {
+      "id": "melissa.game.asset-scene",
+      "module": "game",
+      "name_tr": "3D Asset ve Sahne",
+      "path": "catalog/agents/game/asset-scene.json"
+    },
+    {
+      "id": "melissa.game.build-performance",
+      "module": "game",
+      "name_tr": "Oyun Build ve Performans",
+      "path": "catalog/agents/game/build-performance.json"
+    },
+    {
+      "id": "melissa.game.designer",
+      "module": "game",
+      "name_tr": "Oyun Tasarımı",
+      "path": "catalog/agents/game/designer.json"
+    },
+    {
+      "id": "melissa.game.gameplay-qa",
+      "module": "game",
+      "name_tr": "Oynanış Kalitesi",
+      "path": "catalog/agents/game/gameplay-qa.json"
+    },
+    {
+      "id": "melissa.game.rig-animation",
+      "module": "game",
+      "name_tr": "Rig ve Animasyon",
+      "path": "catalog/agents/game/rig-animation.json"
+    },
+    {
+      "id": "melissa.game.unity-engineer",
+      "module": "game",
+      "name_tr": "Unity Geliştirme",
+      "path": "catalog/agents/game/unity-engineer.json"
+    },
+    {
+      "id": "melissa.game.unreal-engineer",
+      "module": "game",
+      "name_tr": "Unreal Geliştirme",
+      "path": "catalog/agents/game/unreal-engineer.json"
+    },
+    {
+      "id": "melissa.repack.compression-planner",
+      "module": "repack",
+      "name_tr": "Ölçümlü Sıkıştırma Planlama",
+      "path": "catalog/agents/repack/compression-planner.json"
+    },
+    {
+      "id": "melissa.repack.delta-integrity",
+      "module": "repack",
+      "name_tr": "Delta ve Paket Bütünlüğü",
+      "path": "catalog/agents/repack/delta-integrity.json"
+    },
+    {
+      "id": "melissa.repack.file-analysis",
+      "module": "repack",
+      "name_tr": "Dosya ve Deduplikasyon Analizi",
+      "path": "catalog/agents/repack/file-analysis.json"
+    },
+    {
+      "id": "melissa.science.mathematician",
+      "module": "science",
+      "name_tr": "Matematik ve Sembolik Çözüm",
+      "path": "catalog/agents/science/mathematician.json"
+    },
+    {
+      "id": "melissa.science.reproducibility",
+      "module": "science",
+      "name_tr": "Deney ve Tekrarlanabilirlik",
+      "path": "catalog/agents/science/reproducibility.json"
+    },
+    {
+      "id": "melissa.science.researcher",
+      "module": "science",
+      "name_tr": "Bilimsel Araştırma",
+      "path": "catalog/agents/science/researcher.json"
+    },
+    {
+      "id": "melissa.science.simulation",
+      "module": "science",
+      "name_tr": "Sayısal Analiz ve Simülasyon",
+      "path": "catalog/agents/science/simulation.json"
+    },
+    {
+      "id": "melissa.science.statistics",
+      "module": "science",
+      "name_tr": "İstatistik ve Veri Analizi",
+      "path": "catalog/agents/science/statistics.json"
+    },
+    {
+      "id": "melissa.science.verifier",
+      "module": "science",
+      "name_tr": "Bağımsız Bilimsel Doğrulama",
+      "path": "catalog/agents/science/verifier.json"
+    }
+  ]
+}

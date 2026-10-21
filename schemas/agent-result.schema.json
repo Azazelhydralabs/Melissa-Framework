@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:agent-result:v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.agent-result/v1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "partial",
+        "blocked",
+        "failed",
+        "inconclusive",
+        "cancelled",
+        "needs_reconciliation"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "domain_result": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "open_issues": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "verification_status": {
+      "enum": [
+        "not_run",
+        "pending",
+        "passed",
+        "failed",
+        "inconclusive"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "task_id",
+    "run_id",
+    "profile_id",
+    "status",
+    "summary",
+    "artifact_refs",
+    "evidence_refs",
+    "domain_result",
+    "open_issues",
+    "next_actions",
+    "verification_status"
+  ],
+  "additionalProperties": false
+}

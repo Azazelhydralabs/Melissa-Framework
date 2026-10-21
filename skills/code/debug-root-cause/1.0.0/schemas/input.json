@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "lines": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "lines"
+  ],
+  "additionalProperties": false
+}

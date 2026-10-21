@@ -1,0 +1,20 @@
+{
+  "schema_version": "melissa.skill-version/v1",
+  "pin": {
+    "skill_id": "melissa.code.skill.implementation-refactor",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:92920091cdb146849552c487db4599cbfc04350eb52ee4b4bdfa1dd0266238f8"
+  },
+  "definition_digest": "blake3:d6af8f2c958ba7607fdb7258b577c5dbf87457507f6c3f7df0e7e42c0cd0b5eb",
+  "publisher_id": "melissa-local-development",
+  "state": "tested",
+  "required_capabilities": [
+    "workspace.read",
+    "workspace.write_scoped"
+  ],
+  "evaluation_digest": null,
+  "review_artifact_ref": null,
+  "signature": null,
+  "revocation_ref": null,
+  "rollback_to": null
+}

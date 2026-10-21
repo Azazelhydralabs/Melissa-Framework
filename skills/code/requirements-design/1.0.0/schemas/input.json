@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "requirements": {
+      "type": "array"
+    },
+    "coverage": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "requirements",
+    "coverage"
+  ],
+  "additionalProperties": false
+}

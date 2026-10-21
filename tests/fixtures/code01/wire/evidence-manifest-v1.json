@@ -1,0 +1,37 @@
+{
+  "schema_version": "melissa.evidence-manifest/v1",
+  "evidence_id": "fixture:evidence:1",
+  "task_id": "fixture:task:code:1",
+  "run_id": "fixture:run:1",
+  "input_digest": "blake3:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "output_digest": "blake3:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "artifact_refs": [
+    "cas://blake3/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  ],
+  "invocation_ids": [
+    "fixture:invocation:1"
+  ],
+  "tool_versions": {
+    "cargo": {
+      "version": "fixture:pinned",
+      "binary_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  },
+  "environment_ref": "fixture:environment:pinned-toolchain",
+  "verifier_id": "fixture:verifier:not-real-evidence",
+  "verifier_version": "fixture:verifier:1",
+  "protected_acceptance_digest": "blake3:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "acceptance_contract_digest": "blake3:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "verification_status": "passed",
+  "acceptance_results": [
+    {
+      "criterion": "protected boundary regression passes",
+      "passed": true,
+      "evidence_refs": [
+        "cas://blake3/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      ]
+    }
+  ],
+  "developer_intervention": false,
+  "created_at": "2026-10-17T10:00:00+03:00"
+}

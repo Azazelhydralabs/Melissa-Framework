@@ -1,0 +1,19 @@
+{
+  "schema_version": "melissa.skill-version/v1",
+  "pin": {
+    "skill_id": "sample.code.debug",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "definition_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "publisher_id": "sample-unverified-publisher",
+  "state": "draft",
+  "required_capabilities": [
+    "workspace.read"
+  ],
+  "evaluation_digest": null,
+  "review_artifact_ref": null,
+  "signature": null,
+  "revocation_ref": null,
+  "rollback_to": null
+}

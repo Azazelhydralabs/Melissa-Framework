@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "observations": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "observations"
+  ],
+  "additionalProperties": false
+}

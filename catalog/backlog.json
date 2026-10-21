@@ -1,0 +1,829 @@
+{
+  "schema_version": "melissa.backlog/v1",
+  "items": [
+    {
+      "id": "CORE-1000",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 1",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1001",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 2",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1002",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 3",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1003",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 4",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1004",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 5",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1005",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 6",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1006",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 7",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1007",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 8",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1008",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 9",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1009",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 10",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CORE-1010",
+      "module": "core",
+      "title_tr": "Synthetic catalog sample 11",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": []
+    },
+    {
+      "id": "CODE-1011",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 12",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1012",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 13",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1013",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 14",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1014",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 15",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1015",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 16",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1016",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 17",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1017",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 18",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1018",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 19",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1019",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 20",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1020",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 21",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1021",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 22",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1022",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 23",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1023",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 24",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CODE-1024",
+      "module": "code",
+      "title_tr": "Synthetic catalog sample 25",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core"
+      ]
+    },
+    {
+      "id": "CYBER-1025",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 26",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1026",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 27",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1027",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 28",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1028",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 29",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1029",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 30",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1030",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 31",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1031",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 32",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1032",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 33",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1033",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 34",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "CYBER-1034",
+      "module": "cyber",
+      "title_tr": "Synthetic catalog sample 35",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code"
+      ]
+    },
+    {
+      "id": "SCIENCE-1035",
+      "module": "science",
+      "title_tr": "Synthetic catalog sample 36",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber"
+      ]
+    },
+    {
+      "id": "SCIENCE-1036",
+      "module": "science",
+      "title_tr": "Synthetic catalog sample 37",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber"
+      ]
+    },
+    {
+      "id": "SCIENCE-1037",
+      "module": "science",
+      "title_tr": "Synthetic catalog sample 38",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber"
+      ]
+    },
+    {
+      "id": "SCIENCE-1038",
+      "module": "science",
+      "title_tr": "Synthetic catalog sample 39",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber"
+      ]
+    },
+    {
+      "id": "SCIENCE-1039",
+      "module": "science",
+      "title_tr": "Synthetic catalog sample 40",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber"
+      ]
+    },
+    {
+      "id": "SCIENCE-1040",
+      "module": "science",
+      "title_tr": "Synthetic catalog sample 41",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber"
+      ]
+    },
+    {
+      "id": "GAME-1041",
+      "module": "game",
+      "title_tr": "Synthetic catalog sample 42",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ]
+    },
+    {
+      "id": "GAME-1042",
+      "module": "game",
+      "title_tr": "Synthetic catalog sample 43",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ]
+    },
+    {
+      "id": "GAME-1043",
+      "module": "game",
+      "title_tr": "Synthetic catalog sample 44",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ]
+    },
+    {
+      "id": "GAME-1044",
+      "module": "game",
+      "title_tr": "Synthetic catalog sample 45",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ]
+    },
+    {
+      "id": "GAME-1045",
+      "module": "game",
+      "title_tr": "Synthetic catalog sample 46",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ]
+    },
+    {
+      "id": "GAME-1046",
+      "module": "game",
+      "title_tr": "Synthetic catalog sample 47",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ]
+    },
+    {
+      "id": "GAME-1047",
+      "module": "game",
+      "title_tr": "Synthetic catalog sample 48",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ]
+    },
+    {
+      "id": "REPACK-1048",
+      "module": "repack",
+      "title_tr": "Synthetic catalog sample 49",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "game"
+      ]
+    },
+    {
+      "id": "REPACK-1049",
+      "module": "repack",
+      "title_tr": "Synthetic catalog sample 50",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "game"
+      ]
+    },
+    {
+      "id": "REPACK-1050",
+      "module": "repack",
+      "title_tr": "Synthetic catalog sample 51",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "game"
+      ]
+    },
+    {
+      "id": "REPACK-1051",
+      "module": "repack",
+      "title_tr": "Synthetic catalog sample 52",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "game"
+      ]
+    },
+    {
+      "id": "REPACK-1052",
+      "module": "repack",
+      "title_tr": "Synthetic catalog sample 53",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "game"
+      ]
+    },
+    {
+      "id": "REPACK-1053",
+      "module": "repack",
+      "title_tr": "Synthetic catalog sample 54",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "game"
+      ]
+    },
+    {
+      "id": "FIT-1054",
+      "module": "fit",
+      "title_tr": "Synthetic catalog sample 55",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "repack"
+      ]
+    },
+    {
+      "id": "FIT-1055",
+      "module": "fit",
+      "title_tr": "Synthetic catalog sample 56",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "repack"
+      ]
+    },
+    {
+      "id": "FIT-1056",
+      "module": "fit",
+      "title_tr": "Synthetic catalog sample 57",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "repack"
+      ]
+    },
+    {
+      "id": "FIT-1057",
+      "module": "fit",
+      "title_tr": "Synthetic catalog sample 58",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "repack"
+      ]
+    },
+    {
+      "id": "FIT-1058",
+      "module": "fit",
+      "title_tr": "Synthetic catalog sample 59",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "repack"
+      ]
+    },
+    {
+      "id": "FIT-1059",
+      "module": "fit",
+      "title_tr": "Synthetic catalog sample 60",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "repack"
+      ]
+    },
+    {
+      "id": "GRID-1060",
+      "module": "grid",
+      "title_tr": "Synthetic catalog sample 61",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    },
+    {
+      "id": "GRID-1061",
+      "module": "grid",
+      "title_tr": "Synthetic catalog sample 62",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    },
+    {
+      "id": "GRID-1062",
+      "module": "grid",
+      "title_tr": "Synthetic catalog sample 63",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    },
+    {
+      "id": "GRID-1063",
+      "module": "grid",
+      "title_tr": "Synthetic catalog sample 64",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    },
+    {
+      "id": "GRID-1064",
+      "module": "grid",
+      "title_tr": "Synthetic catalog sample 65",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    },
+    {
+      "id": "GRID-1065",
+      "module": "grid",
+      "title_tr": "Synthetic catalog sample 66",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    },
+    {
+      "id": "GRID-1066",
+      "module": "grid",
+      "title_tr": "Synthetic catalog sample 67",
+      "acceptance_tr": "Synthetic contract fixture; no project work plan or acceptance claim.",
+      "status": "planned",
+      "evidence_refs": [],
+      "depends_on_modules": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    }
+  ]
+}

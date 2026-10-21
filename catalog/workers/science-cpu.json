@@ -1,0 +1,81 @@
+{
+  "schema_version": "melissa.worker-type/v1",
+  "id": "science-cpu",
+  "name_tr": "Science CPU Worker",
+  "modules": [
+    "science"
+  ],
+  "declared_platforms": [
+    "windows",
+    "linux"
+  ],
+  "purpose_tr": "Sembolik, sayısal, istatistik ve CPU simülasyon script/solver'larını çalıştırır.",
+  "tool_families": [
+    "science"
+  ],
+  "requirements_tr": [
+    "paket/solver environment lock",
+    "birim ve parametre şeması",
+    "girdi dataset/model hash'i"
+  ],
+  "isolation_contract_tr": "Modelden gelen script izole süreçte; CPU/RAM/disk/süre kotaları, ağ varsayılan kapalı.",
+  "job_contract": {
+    "required": [
+      "task_id",
+      "invocation_id",
+      "attempt_id",
+      "lease_generation",
+      "permit_ref",
+      "arguments_digest",
+      "input_artifact_refs",
+      "limits",
+      "cancellation_ref"
+    ],
+    "returns": [
+      "status",
+      "effect_status",
+      "exit_code",
+      "artifact_refs",
+      "evidence_refs",
+      "resource_usage",
+      "error_category",
+      "cleanup_status",
+      "duration_ms"
+    ]
+  },
+  "resource_policy": {
+    "authority": "task_and_broker",
+    "limits": [
+      "wall_time",
+      "cpu",
+      "ram",
+      "disk",
+      "output_bytes",
+      "network_scope",
+      "gpu_vram_when_applicable"
+    ],
+    "unbounded_jobs": false
+  },
+  "lifecycle": [
+    "registered",
+    "ready",
+    "leased",
+    "running",
+    "cancelling",
+    "reconciling",
+    "finished",
+    "quarantined"
+  ],
+  "acceptance_checks_tr": [
+    "analitik referans/korunum örneği geçer",
+    "yakınsamayan iş başarı olmaz",
+    "seed ve ortamla tekrar üretilir",
+    "iptal hesap sürecini durdurur"
+  ],
+  "implementation": {
+    "definition": "complete",
+    "executor": "not_implemented",
+    "local_acceptance": "not_run",
+    "live_acceptance": "not_run"
+  }
+}

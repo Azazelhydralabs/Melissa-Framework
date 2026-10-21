@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:execution-permit:v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.execution-permit/v1"
+    },
+    "permit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "principal_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resource_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "arguments_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_effects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "not_before_unix_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "expires_at_unix_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_invocations": {
+      "const": 1
+    },
+    "issuer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nonce": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signature_or_mac": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "permit_id",
+    "task_id",
+    "principal_id",
+    "tool_id",
+    "resource_id",
+    "arguments_digest",
+    "allowed_effects",
+    "not_before_unix_ms",
+    "expires_at_unix_ms",
+    "max_invocations",
+    "issuer",
+    "audience",
+    "nonce",
+    "policy_version",
+    "authorization_ref",
+    "signature_or_mac"
+  ],
+  "additionalProperties": false
+}

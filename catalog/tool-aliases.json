@@ -1,0 +1,9 @@
+{
+  "schema_version": "melissa.tool-aliases/v1",
+  "aliases": {
+    "artifact.get": "artifact.read",
+    "artifact.put": "artifact.write",
+    "evidence.record": "evidence.attach"
+  },
+  "execution": "resolve_to_canonical_then_schema_and_policy_validate"
+}

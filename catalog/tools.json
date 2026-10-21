@@ -1,0 +1,2952 @@
+{
+  "schema_version": "melissa.tool-catalog/v1",
+  "tools": [
+    {
+      "id": "approval.request",
+      "owner_module": "core",
+      "family": "approval",
+      "referenced_by": [
+        "melissa.core.coordinator",
+        "melissa.cyber.engagement-controller"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "artifact.read",
+      "owner_module": "core",
+      "family": "artifact",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.release-engineer",
+        "melissa.code.reviewer",
+        "melissa.core.coordinator",
+        "melissa.core.independent-qa",
+        "melissa.core.integration",
+        "melissa.core.planner",
+        "melissa.cyber.api-appsec",
+        "melissa.cyber.asset-inventory",
+        "melissa.cyber.attack-graph",
+        "melissa.cyber.authorization",
+        "melissa.cyber.cloud-security",
+        "melissa.cyber.container-security",
+        "melissa.cyber.dependency-security",
+        "melissa.cyber.detection-validation",
+        "melissa.cyber.emulation-planner",
+        "melissa.cyber.finding-verifier",
+        "melissa.cyber.fuzzing",
+        "melissa.cyber.linux-security",
+        "melissa.cyber.network-security",
+        "melissa.cyber.remediation",
+        "melissa.cyber.researcher",
+        "melissa.cyber.reverse-engineering",
+        "melissa.cyber.source-security",
+        "melissa.cyber.technology-analyst",
+        "melissa.cyber.threat-intelligence",
+        "melissa.cyber.vulnerability-triage",
+        "melissa.cyber.windows-security"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "artifact.write",
+      "owner_module": "core",
+      "family": "artifact",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.dependency-build",
+        "melissa.code.release-engineer",
+        "melissa.code.repository-analyst",
+        "melissa.core.data-documents",
+        "melissa.core.researcher",
+        "melissa.fit.installation-qa",
+        "melissa.fit.installer-engineer",
+        "melissa.fit.release-distribution",
+        "melissa.game.asset-scene",
+        "melissa.game.build-performance",
+        "melissa.game.designer",
+        "melissa.game.gameplay-qa",
+        "melissa.game.rig-animation",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer",
+        "melissa.repack.compression-planner",
+        "melissa.repack.delta-integrity",
+        "melissa.repack.file-analysis",
+        "melissa.science.mathematician",
+        "melissa.science.reproducibility",
+        "melissa.science.researcher",
+        "melissa.science.simulation",
+        "melissa.science.statistics",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "browser.inspect",
+      "owner_module": "core",
+      "family": "browser",
+      "referenced_by": [
+        "melissa.code.frontend",
+        "melissa.code.test-engineer"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "browser.interact",
+      "owner_module": "core",
+      "family": "browser",
+      "referenced_by": [
+        "melissa.code.frontend",
+        "melissa.code.test-engineer"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "browser.navigate",
+      "owner_module": "core",
+      "family": "browser",
+      "referenced_by": [
+        "melissa.code.frontend",
+        "melissa.code.test-engineer",
+        "melissa.cyber.authentication",
+        "melissa.cyber.surface-mapper",
+        "melissa.cyber.web-appsec"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "browser.screenshot",
+      "owner_module": "core",
+      "family": "browser",
+      "referenced_by": [
+        "melissa.code.frontend"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "browser.snapshot",
+      "owner_module": "core",
+      "family": "browser",
+      "referenced_by": [
+        "melissa.cyber.authentication",
+        "melissa.cyber.surface-mapper",
+        "melissa.cyber.web-appsec"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.build",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.backend",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.coverage",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.test-engineer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.dependencies",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.dependency-build",
+        "melissa.code.security-reviewer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.diagnostics",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.debugger"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.lint",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.frontend",
+        "melissa.code.implementer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.patch_propose",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.implementer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.references",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.backend",
+        "melissa.code.implementer",
+        "melissa.code.repository-analyst",
+        "melissa.code.reviewer",
+        "melissa.code.security-reviewer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.search",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.cyber.source-security"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.symbols",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.backend",
+        "melissa.code.implementer",
+        "melissa.code.repository-analyst",
+        "melissa.code.reviewer",
+        "melissa.code.security-reviewer",
+        "melissa.cyber.source-security"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "code.tests",
+      "owner_module": "code",
+      "family": "code",
+      "referenced_by": [
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer",
+        "melissa.code.security-reviewer",
+        "melissa.code.test-engineer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.api.test",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.api-appsec"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.asset.inspect",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.asset-inventory"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.authorization.test",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.authorization"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.binary.disassemble",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.reverse-engineering"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.binary.inspect",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.reverse-engineering"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.cloud.inspect",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.cloud-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.cloud.policy_simulate",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.cloud-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.container.inspect",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.container-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.crash.minimize",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.fuzzing"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.dependency.analyze",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.container-security",
+        "melissa.cyber.dependency-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.detection.correlate",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.detection-validation"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.emulation.plan",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.emulation-planner"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.emulation.run-approved",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.detection-validation"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.finding.correlate",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.vulnerability-triage"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.finding.reproduce",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.finding-verifier"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.fuzz.prepare",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.fuzzing"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.fuzz.run",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.fuzzing"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.graph.analyze",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.attack-graph"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.graph.build",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.attack-graph"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.identity.test",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.authentication"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.intelligence.map",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.threat-intelligence"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.linux.inspect",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.linux-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.network.observe",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.network-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.network.tls_check",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.network-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.remediation.plan",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.remediation"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.retest.scoped",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.remediation"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.scope.inspect",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.api-appsec",
+        "melissa.cyber.asset-inventory",
+        "melissa.cyber.attack-graph",
+        "melissa.cyber.authentication",
+        "melissa.cyber.authorization",
+        "melissa.cyber.cloud-security",
+        "melissa.cyber.container-security",
+        "melissa.cyber.detection-validation",
+        "melissa.cyber.emulation-planner",
+        "melissa.cyber.engagement-controller",
+        "melissa.cyber.finding-verifier",
+        "melissa.cyber.fuzzing",
+        "melissa.cyber.linux-security",
+        "melissa.cyber.network-security",
+        "melissa.cyber.surface-mapper",
+        "melissa.cyber.vulnerability-triage",
+        "melissa.cyber.web-appsec",
+        "melissa.cyber.windows-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.scope.propose",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.engagement-controller"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.source.analyze",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.source-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.surface.observe",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.surface-mapper"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.technology.analyze",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.technology-analyst"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.telemetry.query",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.detection-validation"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.web.test",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.web-appsec"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "cyber.windows.inspect",
+      "owner_module": "cyber",
+      "family": "cyber",
+      "referenced_by": [
+        "melissa.cyber.windows-security"
+      ],
+      "worker_candidates": [
+        "cyber-lab"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "data.normalize",
+      "owner_module": "core",
+      "family": "data",
+      "referenced_by": [
+        "melissa.cyber.asset-inventory"
+      ],
+      "worker_candidates": [
+        "generic",
+        "science-cpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "data.profile",
+      "owner_module": "core",
+      "family": "data",
+      "referenced_by": [
+        "melissa.code.database",
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "generic",
+        "science-cpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "data.query",
+      "owner_module": "core",
+      "family": "data",
+      "referenced_by": [
+        "melissa.code.database",
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "generic",
+        "science-cpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "data.schema.validate",
+      "owner_module": "core",
+      "family": "data",
+      "referenced_by": [
+        "melissa.cyber.api-appsec"
+      ],
+      "worker_candidates": [
+        "generic",
+        "science-cpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "data.transform",
+      "owner_module": "core",
+      "family": "data",
+      "referenced_by": [
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "generic",
+        "science-cpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "desktop.inspect",
+      "owner_module": "core",
+      "family": "desktop",
+      "referenced_by": [
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "desktop-ui"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "desktop.interact",
+      "owner_module": "core",
+      "family": "desktop",
+      "referenced_by": [
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "desktop-ui"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "desktop.observe",
+      "owner_module": "core",
+      "family": "desktop",
+      "referenced_by": [
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "desktop-ui"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "desktop.type_text",
+      "owner_module": "core",
+      "family": "desktop",
+      "referenced_by": [
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "desktop-ui"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.install.plan",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installer-engineer"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.installer.build",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installer-engineer"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.manifest.build",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.release-distribution"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.manifest.validate",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa",
+        "melissa.fit.installer-engineer",
+        "melissa.fit.release-distribution"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.package.sign",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.release-distribution"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.release.publish",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.release-distribution"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.release.stage",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.release-distribution"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.signature.verify",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa",
+        "melissa.fit.release-distribution",
+        "melissa.repack.delta-integrity"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.vm.inject-failure",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.vm.inspect",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.vm.install",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.vm.snapshot",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.vm.uninstall",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "distribution.vm.update",
+      "owner_module": "fit",
+      "family": "distribution",
+      "referenced_by": [
+        "melissa.fit.installation-qa"
+      ],
+      "worker_candidates": [
+        "windows-install-vm",
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "environment.inspect",
+      "owner_module": "core",
+      "family": "environment",
+      "referenced_by": [
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.repository-analyst",
+        "melissa.core.planner",
+        "melissa.game.build-performance",
+        "melissa.repack.compression-planner",
+        "melissa.science.reproducibility",
+        "melissa.science.simulation"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "evidence.attach",
+      "owner_module": "core",
+      "family": "evidence",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer",
+        "melissa.code.repository-analyst",
+        "melissa.code.reviewer",
+        "melissa.code.security-reviewer",
+        "melissa.code.test-engineer",
+        "melissa.core.coordinator",
+        "melissa.core.data-documents",
+        "melissa.core.independent-qa",
+        "melissa.core.integration",
+        "melissa.core.planner",
+        "melissa.core.researcher",
+        "melissa.cyber.api-appsec",
+        "melissa.cyber.asset-inventory",
+        "melissa.cyber.attack-graph",
+        "melissa.cyber.authentication",
+        "melissa.cyber.authorization",
+        "melissa.cyber.cloud-security",
+        "melissa.cyber.container-security",
+        "melissa.cyber.dependency-security",
+        "melissa.cyber.detection-validation",
+        "melissa.cyber.emulation-planner",
+        "melissa.cyber.engagement-controller",
+        "melissa.cyber.finding-verifier",
+        "melissa.cyber.fuzzing",
+        "melissa.cyber.linux-security",
+        "melissa.cyber.network-security",
+        "melissa.cyber.remediation",
+        "melissa.cyber.researcher",
+        "melissa.cyber.reverse-engineering",
+        "melissa.cyber.source-security",
+        "melissa.cyber.surface-mapper",
+        "melissa.cyber.technology-analyst",
+        "melissa.cyber.threat-intelligence",
+        "melissa.cyber.vulnerability-triage",
+        "melissa.cyber.web-appsec",
+        "melissa.cyber.windows-security",
+        "melissa.fit.installation-qa",
+        "melissa.fit.installer-engineer",
+        "melissa.fit.release-distribution",
+        "melissa.game.asset-scene",
+        "melissa.game.build-performance",
+        "melissa.game.designer",
+        "melissa.game.gameplay-qa",
+        "melissa.game.rig-animation",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer",
+        "melissa.repack.compression-planner",
+        "melissa.repack.delta-integrity",
+        "melissa.repack.file-analysis",
+        "melissa.science.mathematician",
+        "melissa.science.reproducibility",
+        "melissa.science.researcher",
+        "melissa.science.simulation",
+        "melissa.science.statistics",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "fs.diff",
+      "owner_module": "core",
+      "family": "fs",
+      "referenced_by": [
+        "melissa.code.implementer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "fs.hash",
+      "owner_module": "core",
+      "family": "fs",
+      "referenced_by": [
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer",
+        "melissa.code.reviewer",
+        "melissa.code.test-engineer",
+        "melissa.core.data-documents",
+        "melissa.core.independent-qa"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "fs.list",
+      "owner_module": "core",
+      "family": "fs",
+      "referenced_by": [
+        "melissa.code.repository-analyst",
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "fs.patch",
+      "owner_module": "core",
+      "family": "fs",
+      "referenced_by": [
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.test-engineer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "fs.read",
+      "owner_module": "core",
+      "family": "fs",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer",
+        "melissa.code.repository-analyst",
+        "melissa.code.reviewer",
+        "melissa.code.security-reviewer",
+        "melissa.code.test-engineer",
+        "melissa.core.data-documents",
+        "melissa.core.independent-qa",
+        "melissa.core.integration",
+        "melissa.core.researcher",
+        "melissa.cyber.dependency-security",
+        "melissa.cyber.remediation",
+        "melissa.cyber.source-security",
+        "melissa.cyber.technology-analyst",
+        "melissa.fit.installation-qa",
+        "melissa.fit.installer-engineer",
+        "melissa.fit.release-distribution",
+        "melissa.game.asset-scene",
+        "melissa.game.build-performance",
+        "melissa.game.designer",
+        "melissa.game.gameplay-qa",
+        "melissa.game.rig-animation",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer",
+        "melissa.repack.compression-planner",
+        "melissa.repack.delta-integrity",
+        "melissa.repack.file-analysis",
+        "melissa.science.mathematician",
+        "melissa.science.reproducibility",
+        "melissa.science.researcher",
+        "melissa.science.simulation",
+        "melissa.science.statistics",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "fs.search",
+      "owner_module": "core",
+      "family": "fs",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.repository-analyst",
+        "melissa.code.reviewer",
+        "melissa.code.security-reviewer",
+        "melissa.code.test-engineer",
+        "melissa.core.integration"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "fs.snapshot",
+      "owner_module": "core",
+      "family": "fs",
+      "referenced_by": [
+        "melissa.code.implementer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.animation.validate",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.rig-animation"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.asset.search",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene",
+        "melissa.game.designer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.asset.validate",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene",
+        "melissa.game.rig-animation",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.blueprint.compile",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.build.package",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.build-performance"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.code.build",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.build-performance",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.material.build",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.mesh.generate",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.mesh.optimize",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.performance.profile",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.build-performance"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.project.inspect",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene",
+        "melissa.game.build-performance",
+        "melissa.game.designer",
+        "melissa.game.gameplay-qa",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.qa.report",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.gameplay-qa"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.rig.create",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.rig-animation"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.scene.inspect",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene",
+        "melissa.game.designer",
+        "melissa.game.rig-animation",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.scene.modify",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.asset-scene",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.test.assert",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.gameplay-qa",
+        "melissa.game.unity-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.test.input",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.gameplay-qa"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.test.launch",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.build-performance",
+        "melissa.game.gameplay-qa",
+        "melissa.game.unity-engineer"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.test.screenshot",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.gameplay-qa"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "game.test.telemetry",
+      "owner_module": "game",
+      "family": "game",
+      "referenced_by": [
+        "melissa.game.build-performance",
+        "melissa.game.gameplay-qa"
+      ],
+      "worker_candidates": [
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "git.diff",
+      "owner_module": "code",
+      "family": "git",
+      "referenced_by": [
+        "melissa.code.architect",
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer",
+        "melissa.code.reviewer",
+        "melissa.code.security-reviewer",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "git.log",
+      "owner_module": "code",
+      "family": "git",
+      "referenced_by": [
+        "melissa.code.release-engineer",
+        "melissa.code.repository-analyst",
+        "melissa.code.reviewer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "git.status",
+      "owner_module": "code",
+      "family": "git",
+      "referenced_by": [
+        "melissa.code.implementer",
+        "melissa.code.repository-analyst"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "git.worktree",
+      "owner_module": "code",
+      "family": "git",
+      "referenced_by": [
+        "melissa.code.implementer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "process.cancel",
+      "owner_module": "core",
+      "family": "process",
+      "referenced_by": [
+        "melissa.code.debugger",
+        "melissa.code.dependency-build"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "process.exec",
+      "owner_module": "core",
+      "family": "process",
+      "referenced_by": [
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer",
+        "melissa.code.security-reviewer",
+        "melissa.code.test-engineer",
+        "melissa.core.data-documents"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "process.inspect",
+      "owner_module": "core",
+      "family": "process",
+      "referenced_by": [
+        "melissa.code.debugger",
+        "melissa.code.dependency-build"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.chunks.plan",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.compression-planner",
+        "melissa.repack.file-analysis"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.codec.benchmark",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.compression-planner"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.dedup.analyze",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.file-analysis"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.delta.apply",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.delta-integrity"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.delta.build",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.delta-integrity"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.entropy.measure",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.file-analysis"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.files.classify",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.file-analysis"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.files.inventory",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.file-analysis"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.integrity.verify",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.compression-planner",
+        "melissa.repack.delta-integrity"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.package.build",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.compression-planner"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.package.extract",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.compression-planner",
+        "melissa.repack.delta-integrity"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "repack.versions.compare",
+      "owner_module": "repack",
+      "family": "repack",
+      "referenced_by": [
+        "melissa.repack.delta-integrity"
+      ],
+      "worker_candidates": [
+        "compression"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.dataset.profile",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.statistics"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.experiment.record",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.reproducibility",
+        "melissa.science.simulation",
+        "melissa.science.statistics",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.matrix.compute",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.mathematician"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.notebook.execute",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.reproducibility"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.numeric.integrate",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.simulation"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.numeric.optimize",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.simulation"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.ode.solve",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.simulation"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.plot.render",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.simulation",
+        "melissa.science.statistics"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.result.verify",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.mathematician",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.simulation.compare",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.reproducibility",
+        "melissa.science.simulation",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.simulation.run",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.simulation"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.statistics.bootstrap",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.statistics"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.statistics.test",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.statistics",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.symbolic.simplify",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.mathematician"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "science.symbolic.solve",
+      "owner_module": "science",
+      "family": "science",
+      "referenced_by": [
+        "melissa.science.mathematician"
+      ],
+      "worker_candidates": [
+        "science-cpu",
+        "science-gpu"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "task.cancel",
+      "owner_module": "core",
+      "family": "task",
+      "referenced_by": [
+        "melissa.core.coordinator"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "task.read",
+      "owner_module": "core",
+      "family": "task",
+      "referenced_by": [
+        "melissa.cyber.engagement-controller"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "task.spawn",
+      "owner_module": "core",
+      "family": "task",
+      "referenced_by": [
+        "melissa.core.coordinator"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "task.status",
+      "owner_module": "core",
+      "family": "task",
+      "referenced_by": [
+        "melissa.core.coordinator",
+        "melissa.core.independent-qa",
+        "melissa.core.integration",
+        "melissa.core.planner"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "task.wait",
+      "owner_module": "core",
+      "family": "task",
+      "referenced_by": [
+        "melissa.core.coordinator"
+      ],
+      "worker_candidates": [],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "verify.protected-run",
+      "owner_module": "core",
+      "family": "verify",
+      "referenced_by": [
+        "melissa.cyber.finding-verifier"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "verify.run",
+      "owner_module": "core",
+      "family": "verify",
+      "referenced_by": [
+        "melissa.core.data-documents",
+        "melissa.core.independent-qa",
+        "melissa.core.integration",
+        "melissa.core.planner",
+        "melissa.science.verifier"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "web.extract",
+      "owner_module": "core",
+      "family": "web",
+      "referenced_by": [
+        "melissa.core.researcher"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "web.fetch",
+      "owner_module": "core",
+      "family": "web",
+      "referenced_by": [
+        "melissa.core.researcher",
+        "melissa.cyber.dependency-security",
+        "melissa.cyber.remediation",
+        "melissa.cyber.researcher",
+        "melissa.cyber.threat-intelligence",
+        "melissa.science.researcher"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "web.search",
+      "owner_module": "core",
+      "family": "web",
+      "referenced_by": [
+        "melissa.core.researcher",
+        "melissa.cyber.researcher",
+        "melissa.cyber.threat-intelligence",
+        "melissa.science.researcher"
+      ],
+      "worker_candidates": [
+        "browser"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "workspace.inspect",
+      "owner_module": "core",
+      "family": "workspace",
+      "referenced_by": [
+        "melissa.code.repository-analyst",
+        "melissa.core.coordinator",
+        "melissa.core.integration",
+        "melissa.core.planner",
+        "melissa.repack.file-analysis"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "workspace.write",
+      "owner_module": "core",
+      "family": "workspace",
+      "referenced_by": [
+        "melissa.fit.installer-engineer",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "worker_candidates": [
+        "generic"
+      ],
+      "execution_mode": "broker_or_isolated_worker",
+      "policy_classification": "tool_specific_target_args_and_effects_required",
+      "input_schema_status": "pending_module_implementation",
+      "output_envelope_ref": "melissa.tool-observation/v1",
+      "adapter_status": "not_implemented",
+      "acceptance_status": "not_run"
+    }
+  ]
+}

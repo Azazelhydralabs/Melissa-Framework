@@ -1,0 +1,116 @@
+{
+  "schema_version": "melissa.skill-definition/v1",
+  "id": "sample.code.debug",
+  "module": "code",
+  "name_tr": "Sample contract fixture",
+  "description_tr": "Definition-only sample. Hashes and file references are placeholders. No skill package, helper, tool execution or capability acceptance is claimed.",
+  "use_when": [
+    "Only validating the CODE-01 sample manifest shape"
+  ],
+  "manifest": {
+    "entrypoint": "SKILL.md",
+    "category": "coding",
+    "trust_level": "untrusted",
+    "routing": {
+      "intents": [
+        "sample_contract_validation"
+      ],
+      "priority": 0
+    },
+    "required_tools": [
+      "code.build",
+      "fs.read"
+    ],
+    "required_capabilities": [
+      "workspace.read"
+    ],
+    "prerequisites": [
+      "Sample references must never be executed"
+    ],
+    "runtime": {
+      "timeout_seconds": 600,
+      "max_iterations": 8,
+      "max_parallel_tools": 2,
+      "max_cost_micro_usd": 0
+    },
+    "input_schema_ref": "schemas/input.json",
+    "output_schema_ref": "schemas/output.json",
+    "verification": [
+      {
+        "check": "Sample check definition only; no build was executed",
+        "required": true
+      }
+    ],
+    "evaluation": {
+      "dataset_ref": "evals/cases.jsonl",
+      "assertions_ref": "evals/assertions.json",
+      "min_success_rate": 0.85
+    }
+  },
+  "files": [
+    {
+      "path": "SKILL.md",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "entrypoint"
+    },
+    {
+      "path": "schemas/input.json",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/output.json",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "schema"
+    },
+    {
+      "path": "evals/cases.jsonl",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "evaluation"
+    },
+    {
+      "path": "evals/assertions.json",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "evaluation"
+    },
+    {
+      "path": "scripts/classify.py",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "script"
+    },
+    {
+      "path": "references/debug.md",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "reference"
+    },
+    {
+      "path": "assets/report.md",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "template"
+    },
+    {
+      "path": "tests/parser.py",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "role": "test"
+    }
+  ],
+  "scripts": [
+    {
+      "file_path": "scripts/classify.py",
+      "interpreter_ref": "sample-interpreter-not-installed",
+      "input_schema_ref": "schemas/input.json",
+      "output_schema_ref": "schemas/output.json",
+      "required_capabilities": [
+        "workspace.read"
+      ],
+      "timeout_seconds": 30
+    }
+  ],
+  "templates": [
+    {
+      "file_path": "assets/report.md",
+      "input_schema_ref": "schemas/input.json",
+      "output_schema_ref": "schemas/output.json"
+    }
+  ]
+}

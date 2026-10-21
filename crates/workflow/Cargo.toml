@@ -1,0 +1,27 @@
+[package]
+name = "melissa-workflow"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+melissa-core-contracts = { path = "../core-contracts" }
+melissa-local-store = { path = "../local-store" }
+melissa-model-gateway = { path = "../model-gateway" }
+melissa-execution-broker = { path = "../execution-broker" }
+melissa-container-executor = { path = "../container-executor" }
+serde.workspace = true
+serde_json.workspace = true
+blake3.workspace = true
+tokio.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+melissa-repository = { path = "../repository" }
+melissa-skill-context = { path = "../skill-context" }
+melissa-build-test = { path = "../build-test" }
+rusqlite.workspace = true
+zeroize.workspace = true
+sha2 = "=0.10.9"
+windows-sys = { workspace = true, features = ["Win32_Security_Cryptography", "Win32_Foundation"] }
+

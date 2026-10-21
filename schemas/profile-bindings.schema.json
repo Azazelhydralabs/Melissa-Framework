@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:profile-bindings:v1",
+  "description": "CODE-01 structural definition only. Rust semantic validation is additionally required; this schema grants no authority and implements no runtime.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.profile-bindings/v1"
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_schema_version": {
+      "const": "melissa.agent-profile/v1"
+    },
+    "state": {
+      "enum": [
+        "unresolved",
+        "bound"
+      ]
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/skill_pin"
+      },
+      "minItems": 0
+    },
+    "context_contract_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "runtime_limits": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/runtime_limits"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "unresolved_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile_id",
+    "profile_schema_version",
+    "state",
+    "skills",
+    "unresolved_reasons"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "runtime_limits": {
+      "type": "object",
+      "properties": {
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_parallel_tools": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_cost_micro_usd": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "timeout_seconds",
+        "max_iterations",
+        "max_parallel_tools",
+        "max_cost_micro_usd"
+      ],
+      "additionalProperties": false
+    },
+    "skill_pin": {
+      "type": "object",
+      "properties": {
+        "skill_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "semantic_version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "skill_id",
+        "semantic_version",
+        "content_digest"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

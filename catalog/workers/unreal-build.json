@@ -1,0 +1,81 @@
+{
+  "schema_version": "melissa.worker-type/v1",
+  "id": "unreal-build",
+  "name_tr": "Unreal Build Worker",
+  "modules": [
+    "game"
+  ],
+  "declared_platforms": [
+    "windows",
+    "linux"
+  ],
+  "purpose_tr": "Unreal UAT/toolchain ile build, cook ve paketleme çalıştırır.",
+  "tool_families": [
+    "game"
+  ],
+  "requirements_tr": [
+    "engine/platform/toolchain sürümü",
+    "lisanslı engine erişimi",
+    "izole proje/scratch/cache"
+  ],
+  "isolation_contract_tr": "Build script/plugin kodu izolasyonlu; engine cache ve kullanıcı projesi izinleri ayrı.",
+  "job_contract": {
+    "required": [
+      "task_id",
+      "invocation_id",
+      "attempt_id",
+      "lease_generation",
+      "permit_ref",
+      "arguments_digest",
+      "input_artifact_refs",
+      "limits",
+      "cancellation_ref"
+    ],
+    "returns": [
+      "status",
+      "effect_status",
+      "exit_code",
+      "artifact_refs",
+      "evidence_refs",
+      "resource_usage",
+      "error_category",
+      "cleanup_status",
+      "duration_ms"
+    ]
+  },
+  "resource_policy": {
+    "authority": "task_and_broker",
+    "limits": [
+      "wall_time",
+      "cpu",
+      "ram",
+      "disk",
+      "output_bytes",
+      "network_scope",
+      "gpu_vram_when_applicable"
+    ],
+    "unbounded_jobs": false
+  },
+  "lifecycle": [
+    "registered",
+    "ready",
+    "leased",
+    "running",
+    "cancelling",
+    "reconciling",
+    "finished",
+    "quarantined"
+  ],
+  "acceptance_checks_tr": [
+    "compile/Blueprint hatası yapılandırılır",
+    "cook/package çıktısı doğrulanır",
+    "disk dolması doğru raporlanır",
+    "iptal bütün build süreçlerine yayılır"
+  ],
+  "implementation": {
+    "definition": "complete",
+    "executor": "not_implemented",
+    "local_acceptance": "not_run",
+    "live_acceptance": "not_run"
+  }
+}

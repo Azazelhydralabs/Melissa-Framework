@@ -1,0 +1,8 @@
+{
+  "schema_version": "melissa.process-control/v1",
+  "tool": "process.cancel",
+  "task_id": "task:owned",
+  "invocation_id": "invocation:owned",
+  "generation": 1,
+  "resource_id": "workspace:owned"
+}

@@ -1,0 +1,153 @@
+[
+  {
+    "id": "impact",
+    "profile": "melissa.code.repository-analyst",
+    "skill": "repository-impact",
+    "task": "Inspect the real current sources. Changing pricing.net must identify all production files reached through callers, excluding the unrelated audit module. Return deliverable affected_files (sorted paths), edges (objects caller/callee as qualified module.function), and boundary=\"synthetic_owned_repository\". Do not edit source.",
+    "files": {
+      "pricing.py": "def net(total):\n    return total * 0.9\n",
+      "invoice.py": "from pricing import net\ndef render(total):\n    return str(net(total))\n",
+      "cli.py": "from invoice import render\ndef main():\n    return render(100)\n",
+      "audit.py": "def net_event():\n    return \"independent\"\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nInspect the real current sources. Changing pricing.net must identify all production files reached through callers, excluding the unrelated audit module. Return deliverable affected_files (sorted paths), edges (objects caller/callee as qualified module.function), and boundary=\"synthetic_owned_repository\". Do not edit source.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nd=a['deliverable'];assert set(d['affected_files'])=={'pricing.py','invoice.py','cli.py'}\ne={(x['caller'],x['callee']) for x in d['edges']};assert {('invoice.render','pricing.net'),('cli.main','invoice.render')}<=e\nassert d['boundary']=='synthetic_owned_repository'\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [],
+    "native": null
+  },
+  {
+    "id": "design",
+    "profile": "melissa.code.architect",
+    "skill": "requirements-design",
+    "task": "Design a finite job protocol. States pending,running,done,failed. Events start from pending=>running; succeed running=>done; fail running=>failed; retry failed=>pending. Terminal done cannot start/retry. At most 3 retries; dedup must include tenant_id and request_id. Return deliverable {transitions:[{from,event,to}],dedup_fields:[...],retry_limit:3}. Keep unspecified state/event pairs denied. Do not create code.",
+    "files": {
+      "requirements.txt": "A completed job must never run twice. Dedup keys are tenant scoped. Retry only failed work with a finite limit.\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nDesign a finite job protocol. States pending,running,done,failed. Events start from pending=>running; succeed running=>done; fail running=>failed; retry failed=>pending. Terminal done cannot start/retry. At most 3 retries; dedup must include tenant_id and request_id. Return deliverable {transitions:[{from,event,to}],dedup_fields:[...],retry_limit:3}. Keep unspecified state/event pairs denied. Do not create code.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nd=a['deliverable'];assert set(d['dedup_fields'])=={'tenant_id','request_id'};assert d['retry_limit']==3\nt={(x['from'],x['event']):x['to'] for x in d['transitions']};expected={('pending','start'):'running',('running','succeed'):'done',('running','fail'):'failed',('failed','retry'):'pending'};assert t==expected\nstate='pending'\nfor e in ['start','fail','retry','start','succeed']:state=t[(state,e)]\nassert state=='done' and ('done','retry') not in t and ('done','start') not in t\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [],
+    "native": null
+  },
+  {
+    "id": "implementation",
+    "profile": "melissa.code.implementer",
+    "skill": "implementation-refactor",
+    "task": "Produce solution.py in deliverable.files [{path,content}]. Implement normalize(items): ignore None, strip each string and casefold it, discard empty strings, deduplicate preserving first normalized occurrence. Non-string/non-None raises TypeError; never mutate input. Standard library only. Submit an artifact candidate; host applies/tests it separately, so no workspace edit is authorized by the final artifact.",
+    "files": {
+      "normalize.py": "def normalize(items):\n    # TODO: preserve stable order and reject wrong types\n    return list(set(items))\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nProduce solution.py in deliverable.files [{path,content}]. Implement normalize(items): ignore None, strip each string and casefold it, discard empty strings, deduplicate preserving first normalized occurrence. Non-string/non-None raises TypeError; never mutate input. Standard library only. Submit an artifact candidate; host applies/tests it separately, so no workspace edit is authorized by the final artifact.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nns={};exec(compile(Path('solution.py').read_bytes(),'solution.py','exec'),ns);f=ns['normalize']\nx=[' A ','a',None,'','ß','SS',' b '];before=x[:];assert f(x)==['a','ss','b'] and x==before\nfor v in [0,{},[],True]:\n try:f(['ok',v])\n except TypeError:pass\n else:raise AssertionError('non-string accepted')\nassert f([])==[] and f(['İ','i'])==['i̇','i']\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [
+      "solution.py"
+    ],
+    "native": null
+  },
+  {
+    "id": "debug",
+    "profile": "melissa.code.debugger",
+    "skill": "debug-root-cause",
+    "task": "Investigate the duration parser bug and return solution.py with parse_duration(text)->integer milliseconds, plus deliverable.root_cause. Accept ASCII nonnegative integer followed by s or ms, surrounding whitespace and whitespace before suffix. Reject empty, decimals, negatives, extra trailing text, unknown units, and non-ASCII digits with ValueError. Explain the concrete original strip misuse. Standard library only.",
+    "files": {
+      "duration.py": "def parse_duration(text):\n    return int(text.strip(\"ms\"))\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nInvestigate the duration parser bug and return solution.py with parse_duration(text)->integer milliseconds, plus deliverable.root_cause. Accept ASCII nonnegative integer followed by s or ms, surrounding whitespace and whitespace before suffix. Reject empty, decimals, negatives, extra trailing text, unknown units, and non-ASCII digits with ValueError. Explain the concrete original strip misuse. Standard library only.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nns={};exec(compile(Path('solution.py').read_bytes(),'solution.py','exec'),ns);f=ns['parse_duration']\nfor n in [0,1,17,250,9999]:assert f(f' {n} ms ')==n and f(f'{n}s')==n*1000\nfor v in ['', '1.2s','-1s','2m','3s extra','١s','2sms']:\n try:f(v)\n except ValueError:pass\n else:raise AssertionError(v)\nassert 'strip' in a['deliverable']['root_cause'].lower()\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [
+      "solution.py"
+    ],
+    "native": null
+  },
+  {
+    "id": "regression",
+    "profile": "melissa.code.test-engineer",
+    "skill": "regression-quality",
+    "task": "Return solution.py defining test_candidate(candidate). It must test clamp(x,lo,hi): return lo below lower bound, hi above upper, preserve interior/exact endpoints; reject lo>hi with ValueError. Your test must pass a correct implementation and detect wrong lower, upper, interior, and invalid-bound behavior using assertions. Do not inspect function identity/name/source/code; use black-box calls. Standard library only.",
+    "files": {
+      "clamp.py": "def clamp(x,lo,hi):\n    if lo>hi: raise ValueError(\"bounds\")\n    return max(lo,min(x,hi))\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nReturn solution.py defining test_candidate(candidate). It must test clamp(x,lo,hi): return lo below lower bound, hi above upper, preserve interior/exact endpoints; reject lo>hi with ValueError. Your test must pass a correct implementation and detect wrong lower, upper, interior, and invalid-bound behavior using assertions. Do not inspect function identity/name/source/code; use black-box calls. Standard library only.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nns={};code=Path('solution.py').read_text();assert not any(s in code for s in ['__code__','inspect.','__name__','getsource']);exec(compile(code,'solution.py','exec'),ns);test=ns['test_candidate']\ndef good(x,lo,hi):\n if lo>hi:raise ValueError('bounds')\n return max(lo,min(x,hi))\ntest(good)\nmutants=[lambda x,l,h:h if x<l else good(x,l,h),lambda x,l,h:l if x>h else good(x,l,h),lambda x,l,h:l if l<x<h else good(x,l,h),lambda x,l,h:max(l,min(x,h))]\nfor f in mutants:\n try:test(f)\n except (AssertionError,ValueError):pass\n else:raise AssertionError('surviving mutation')\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [
+      "solution.py"
+    ],
+    "native": null
+  },
+  {
+    "id": "frontend",
+    "profile": "melissa.code.implementer",
+    "skill": "frontend-flow",
+    "task": "Produce solution.mjs ES module exporting reduce(state,event) and render(state). Initial state fields {status:\"idle\",email:\"\",requestId:0,message:\"\"}. submit event has email: invalid email sets error without incrementing requestId; valid email sets loading, trimmed email, increments requestId, clears message. While loading, repeated submit returns unchanged state. resolve event {requestId,ok,message}: ignore stale requestId or responses outside loading; current response sets success/error and message. Never mutate input. render returns HTML including a label for=\"email\", input id=\"email\" type=\"email\", and a role=\"status\" aria-live=\"polite\" region; escape dynamic email/message HTML. Use no external dependencies.",
+    "files": {
+      "form.mjs": "// TODO: pure state transitions and escaped accessible HTML\nexport function reduce(state,event){return state;}\nexport function render(state){return \"\";}\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nProduce solution.mjs ES module exporting reduce(state,event) and render(state). Initial state fields {status:\"idle\",email:\"\",requestId:0,message:\"\"}. submit event has email: invalid email sets error without incrementing requestId; valid email sets loading, trimmed email, increments requestId, clears message. While loading, repeated submit returns unchanged state. resolve event {requestId,ok,message}: ignore stale requestId or responses outside loading; current response sets success/error and message. Never mutate input. render returns HTML including a label for=\"email\", input id=\"email\" type=\"email\", and a role=\"status\" aria-live=\"polite\" region; escape dynamic email/message HTML. Use no external dependencies.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nimport subprocess\njs=r\"\"\"import {reduce,render} from './solution.mjs';import assert from 'node:assert/strict';\nconst initial={status:'idle',email:'',requestId:0,message:''};const frozen=JSON.stringify(initial);let bad=reduce(initial,{type:'submit',email:'invalid'});assert.equal(bad.status,'error');assert.equal(bad.requestId,0);let s=reduce(initial,{type:'submit',email:' a@b.com '});assert.equal(s.status,'loading');assert.equal(s.requestId,1);assert.equal(s.email,'a@b.com');assert.deepEqual(reduce(s,{type:'submit',email:'x@y.com'}),s);assert.deepEqual(reduce(s,{type:'resolve',requestId:0,ok:true,message:'stale'}),s);let done=reduce(s,{type:'resolve',requestId:1,ok:true,message:'<img src=x onerror=1>'});assert.equal(done.status,'success');assert.equal(JSON.stringify(initial),frozen);let html=render(done);assert.match(html,/<label[^>]*for=[\"']email[\"']/i);assert.match(html,/<input[^>]*id=[\"']email[\"']/i);assert.match(html,/type=[\"']email[\"']/i);assert.match(html,/role=[\"']status[\"']/i);assert.match(html,/aria-live=[\"']polite[\"']/i);assert(!html.includes('<img src=x'));assert(html.includes('&lt;'));\n\"\"\"\nsubprocess.run(['/opt/node/bin/node','--input-type=module','-e',js],check=True)\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [
+      "solution.mjs"
+    ],
+    "native": null,
+    "requested_expert_profile": "melissa.code.frontend",
+    "execution_mode": "text_code_artifact_only",
+    "profile_selection_reason": "Frontend visual profile requires image_understanding and this gateway supports text/tools only. This task has no image input and tests pure state/HTML behavior; use the existing capability-checked implementer with frontend-flow skill. No vision/browser acceptance or catalog weakening."
+  },
+  {
+    "id": "backend",
+    "profile": "melissa.code.backend",
+    "skill": "backend-effects",
+    "task": "Produce solution.py defining Registry with submit(tenant,key,payload,effect). Call effect(payload) once for concurrent submissions with the same tenant/key/canonical JSON payload, return the same result to duplicates, reject different payload for a completed same key with ValueError, isolate tenants. Failed effect raises original error, leaves key retryable, and never caches failure as success. Use thread-safe standard-library implementation. Preserve caller payload. No network.",
+    "files": {
+      "service.py": "class Registry:\n    # TODO: tenant scoped idempotency and concurrent effects\n    pass\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nProduce solution.py defining Registry with submit(tenant,key,payload,effect). Call effect(payload) once for concurrent submissions with the same tenant/key/canonical JSON payload, return the same result to duplicates, reject different payload for a completed same key with ValueError, isolate tenants. Failed effect raises original error, leaves key retryable, and never caches failure as success. Use thread-safe standard-library implementation. Preserve caller payload. No network.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nns={};exec(compile(Path('solution.py').read_bytes(),'solution.py','exec'),ns);R=ns['Registry'];r=R()\nfrom concurrent.futures import ThreadPoolExecutor\nimport threading,time\ncount=[0];lock=threading.Lock()\ndef effect(p):\n with lock:count[0]+=1\n time.sleep(.01);return {'value':p['a']+p['b']}\np={'a':2,'b':3}\nwith ThreadPoolExecutor(max_workers=12)as pool:out=list(pool.map(lambda _:r.submit('t','k',p,effect),range(24)))\nassert all(x=={'value':5}for x in out)and count[0]==1 and p=={'a':2,'b':3}\nassert r.submit('t','k',{'b':3,'a':2},effect)=={'value':5}and count[0]==1\ntry:r.submit('t','k',{'a':9,'b':1},effect)\nexcept ValueError:pass\nelse:raise AssertionError('payload conflict')\nr.submit('other','k',p,effect);assert count[0]==2\nattempt=[0]\ndef flaky(p):\n attempt[0]+=1\n if attempt[0]==1:raise RuntimeError('transient')\n return 7\ntry:r.submit('t','retry',{},flaky)\nexcept RuntimeError:pass\nelse:raise AssertionError('failure hidden')\nassert r.submit('t','retry',{},flaky)==7 and attempt[0]==2\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [
+      "solution.py"
+    ],
+    "native": null
+  },
+  {
+    "id": "database",
+    "profile": "melissa.code.database",
+    "skill": "database-migration",
+    "task": "Produce solution.py defining migrate(conn) for an existing SQLite users(id INTEGER PRIMARY KEY,email TEXT) table. Add a generated VIRTUAL email_norm column equal to lower(trim(email)), and a unique index users_email_norm_uq on email_norm, so future inserts obey the same normalized uniqueness. Preserve IDs and raw emails. Own one atomic transaction, commit on success and rollback everything including new column/index on existing duplicates. Re-running a successful migration is idempotent. Caller supplies a committed connection with no active transaction. Standard library sqlite3 only; no executescript implicit commit.",
+    "files": {
+      "schema.sql": "CREATE TABLE users(id INTEGER PRIMARY KEY,email TEXT);\n-- TODO: atomic generated normalized email migration\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nProduce solution.py defining migrate(conn) for an existing SQLite users(id INTEGER PRIMARY KEY,email TEXT) table. Add a generated VIRTUAL email_norm column equal to lower(trim(email)), and a unique index users_email_norm_uq on email_norm, so future inserts obey the same normalized uniqueness. Preserve IDs and raw emails. Own one atomic transaction, commit on success and rollback everything including new column/index on existing duplicates. Re-running a successful migration is idempotent. Caller supplies a committed connection with no active transaction. Standard library sqlite3 only; no executescript implicit commit.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nimport sqlite3\nns={};exec(compile(Path('solution.py').read_bytes(),'solution.py','exec'),ns);f=ns['migrate']\ndef connect(rows):\n c=sqlite3.connect(':memory:');c.execute('CREATE TABLE users(id INTEGER PRIMARY KEY,email TEXT)');c.executemany('INSERT INTO users VALUES(?,?)',rows);c.commit();return c\nc=connect([(1,' A@X.COM '),(2,'b@x.com')]);f(c);f(c);assert c.execute('SELECT id,email,email_norm FROM users ORDER BY id').fetchall()==[(1,' A@X.COM ','a@x.com'),(2,'b@x.com','b@x.com')]\ntry:c.execute(\"INSERT INTO users(id,email)VALUES(3,'a@x.com')\")\nexcept sqlite3.IntegrityError:c.rollback()\nelse:raise AssertionError('future duplicate allowed')\nc=connect([(1,' a@x.com '),(2,'A@X.COM')]);before=c.execute(\"SELECT sql FROM sqlite_master ORDER BY name\").fetchall()\ntry:f(c)\nexcept Exception:pass\nelse:raise AssertionError('existing duplicates accepted')\nassert c.execute(\"SELECT sql FROM sqlite_master ORDER BY name\").fetchall()==before\nassert c.execute('SELECT * FROM users ORDER BY id').fetchall()==[(1,' a@x.com '),(2,'A@X.COM')]\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [
+      "solution.py"
+    ],
+    "native": null
+  },
+  {
+    "id": "review",
+    "profile": "melissa.code.reviewer",
+    "skill": "evidence-review",
+    "task": "Review service.py without edits. Explain exactly the demonstrated tenant leak and duplicate side effect; do not invent unrelated issues. Return deliverable.findings entries with code cross_tenant_cache and duplicate_side_effect, path, line (1-based concrete faulty line), explanation and counterexample. Supplied test-receipt.json is independent source-bound evidence, not permission to execute. Keep release/task acceptance false.",
+    "files": {
+      "service.py": "cache={}\ncharges=[]\ndef charge(tenant,request_id,payload):\n    charges.append((tenant,payload))\n    if request_id in cache:\n        return cache[request_id]\n    result={\"tenant\":tenant,\"amount\":payload[\"amount\"]}\n    cache[request_id]=result\n    return result\n",
+      "test-receipt.json": "{\"source\": \"service.py\", \"observed\": [\"same tenant/key twice produces 2 charges\", \"other tenant/same request returns first tenant result\"], \"accepted\": false, \"source_sha256\": \"fee1b26fbfb65494d01f5adf77e6cda7c08e4d247b3bc0652e9b32fcc191713d\"}",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nReview service.py without edits. Explain exactly the demonstrated tenant leak and duplicate side effect; do not invent unrelated issues. Return deliverable.findings entries with code cross_tenant_cache and duplicate_side_effect, path, line (1-based concrete faulty line), explanation and counterexample. Supplied test-receipt.json is independent source-bound evidence, not permission to execute. Keep release/task acceptance false.\n"
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nd=a['deliverable'];findings={f['code']:f for f in d['findings']};assert set(findings)=={'cross_tenant_cache','duplicate_side_effect'}\nfor code,f in findings.items():assert f['path']=='service.py' and isinstance(f['line'],int) and 1<=f['line']<=9 and len(f['explanation'])>20 and f['counterexample']\nassert findings['duplicate_side_effect']['line']==4 and findings['cross_tenant_cache']['line'] in [5,6,8]\nns={};exec(Path('service.py').read_text(),ns);x=ns['charge']('A','x',{'amount':1});ns['charge']('A','x',{'amount':1});leak=ns['charge']('B','x',{'amount':99});assert len(ns['charges'])==3 and leak['tenant']=='A'\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [],
+    "native": null
+  },
+  {
+    "id": "release",
+    "profile": "melissa.code.release-engineer",
+    "skill": "build-release",
+    "task": "Use the actual run_targeted_tests native script with empty input. The owned Python project currently has a real failing unit test. Report a release gate decision; do not edit. Return deliverable {release_allowed:false,failed_test_names:[...],reason,evidence_kind:\"native_worker_test_report\"}. No successful build or helper claim can override a failing behavior test. Include the exact observed failure test name in failed_test_names.",
+    "files": {
+      "calc.py": "def add(a,b):\n    return a-b\n",
+      "tests/test_calc.py": "from calc import add\ndef test_add_contract():\n    assert add(2,3)==5\n",
+      "README.md": "Owned synthetic CODE-07 development fixture. Read source and preserve dirty.bin. Package/helper candidates never constitute host acceptance.\nUse the actual run_targeted_tests native script with empty input. The owned Python project currently has a real failing unit test. Report a release gate decision; do not edit. Return deliverable {release_allowed:false,failed_test_names:[...],reason,evidence_kind:\"native_worker_test_report\"}. No successful build or helper claim can override a failing behavior test. Include the exact observed failure test name in failed_test_names.\n",
+      "tests/__init__.py": ""
+    },
+    "oracle": "from pathlib import Path\nimport json\na=json.loads(Path(\"answer.json\").read_text())\nassert a[\"task_accepted\"] is False\nd=a['deliverable'];assert d['release_allowed'] is False and d['evidence_kind']=='native_worker_test_report';assert any('test_add_contract' in n for n in d['failed_test_names']);assert len(d['reason'])>25\n\nprint(\"CODE07_PROTECTED_ORACLE_OK\")\n",
+    "allowed_outputs": [],
+    "native": "tests"
+  }
+]

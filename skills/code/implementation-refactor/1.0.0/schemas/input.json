@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "expected": {
+      "type": "string"
+    },
+    "actual": {
+      "type": "string"
+    },
+    "paths": {
+      "type": "array"
+    },
+    "allowed": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "expected",
+    "actual",
+    "paths",
+    "allowed"
+  ],
+  "additionalProperties": false
+}

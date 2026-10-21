@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"applied": [1, 2, 3], "expected": [1, 2, 3], "violations": []}, "expected_status": "candidate"}
+{"id": "negative", "input": {"applied": [1, 3], "expected": [1, 2, 3], "violations": ["foreign_key"]}, "expected_not_status": "candidate"}

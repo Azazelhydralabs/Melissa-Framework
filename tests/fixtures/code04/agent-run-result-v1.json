@@ -1,0 +1,16 @@
+{
+  "schema_version": "melissa.agent-run-result/v1",
+  "run_id": "fixture",
+  "task_id": "fixture:task:code:1",
+  "status": "final_candidate",
+  "answer": "Local contract fixture; not live AI.",
+  "request_ids": [
+    "model:fixture:1"
+  ],
+  "tool_calls": 0,
+  "artifact_refs": [
+    "model:fixture:1:receipt"
+  ],
+  "requires_reconciliation": false,
+  "task_accepted": false
+}

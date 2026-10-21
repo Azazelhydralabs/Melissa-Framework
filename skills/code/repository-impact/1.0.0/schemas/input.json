@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "target": {
+      "type": "string"
+    },
+    "edges": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "target",
+    "edges"
+  ],
+  "additionalProperties": false
+}

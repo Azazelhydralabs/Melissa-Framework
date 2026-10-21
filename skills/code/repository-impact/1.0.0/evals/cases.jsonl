@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"target": "a", "edges": [["b", "a"], ["c", "b"]]}, "expected_status": "candidate"}
+{"id": "negative", "input": {"target": "a", "edges": [["z", "y"]]}, "expected_not_status": "candidate"}

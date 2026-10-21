@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "artifact_hex": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "smoke_exit": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "artifact_hex",
+    "sha256",
+    "smoke_exit"
+  ],
+  "additionalProperties": false
+}

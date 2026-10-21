@@ -1,0 +1,42 @@
+{
+  "schema_version": "melissa.tool-observation/v2",
+  "task_id": "fixture:task:code:1",
+  "invocation_id": "fixture:invocation:1",
+  "attempt_id": "fixture:attempt:1",
+  "tool_id": "code.tests",
+  "status": "success",
+  "effect_status": "observed",
+  "summary": "Static contract fixture; no test was executed.",
+  "artifact_refs": [
+    "cas://blake3/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  ],
+  "evidence_refs": [],
+  "exit_code": 0,
+  "duration_ms": 100,
+  "truncated": false,
+  "error_category": null,
+  "resource_usage": {
+    "cpu_ms": 10,
+    "peak_memory_bytes": 1000
+  },
+  "input_digest": "blake3:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "output_digest": "blake3:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "environment_ref": "fixture:environment:pinned-toolchain",
+  "artifacts": [
+    {
+      "type": "junit",
+      "uri": "cas://blake3/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    }
+  ],
+  "metrics": {
+    "passed": 18,
+    "failed": 0,
+    "coverage": {
+      "value": 91.5,
+      "unit": "percent"
+    }
+  },
+  "warnings": [
+    "Static example; artifact URI does not attest a real execution."
+  ]
+}

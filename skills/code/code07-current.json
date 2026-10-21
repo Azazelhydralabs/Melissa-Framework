@@ -1,0 +1,52 @@
+[
+  {
+    "skill_id": "melissa.code.skill.backend-effects",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:02971a0cec3b2895a553fe72af9180284b8290e9b2856956978dde49dc40081c"
+  },
+  {
+    "skill_id": "melissa.code.skill.build-release",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:1c4c91b2c025c8988c3ce9d82882e76e22214c2030cbe0b657d7eb8ffed56969"
+  },
+  {
+    "skill_id": "melissa.code.skill.database-migration",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:eb69a9faad5de6281c4cc681406aa8d9fc509403a68555ccfd50c83e30e494bb"
+  },
+  {
+    "skill_id": "melissa.code.skill.debug-root-cause",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:f2d93ac3fdaddc72f3d8a6ded354106f0342ec4a18c7a3cbe31f2164025fe022"
+  },
+  {
+    "skill_id": "melissa.code.skill.evidence-review",
+    "semantic_version": "1.0.1",
+    "content_digest": "blake3:9f3eb21ce806166961f8829b1171cec3196968fe63f7703d6c40209ad788cf6b"
+  },
+  {
+    "skill_id": "melissa.code.skill.frontend-flow",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:8896162d7deba38a6f8c0dd38a4c7051b2f5259d26fd33a5326f26d2e6f4402c"
+  },
+  {
+    "skill_id": "melissa.code.skill.implementation-refactor",
+    "semantic_version": "1.0.1",
+    "content_digest": "blake3:6e25449bcf4efe0b00c85029dd2fa814f5f928ceca6c5bf1bd209584ef629459"
+  },
+  {
+    "skill_id": "melissa.code.skill.regression-quality",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:3076d0601391efd822a0c72903df14a0e52af68641a44018fbd24ebe53ada474"
+  },
+  {
+    "skill_id": "melissa.code.skill.repository-impact",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:261dc6eabc2cb2809f0a7918e082fee469cacc47360bdc67024973a03a28292b"
+  },
+  {
+    "skill_id": "melissa.code.skill.requirements-design",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:9bf8d3acf21151facb0fb390320e0155b79edaf21a46e3ad05b4b18be463241e"
+  }
+]

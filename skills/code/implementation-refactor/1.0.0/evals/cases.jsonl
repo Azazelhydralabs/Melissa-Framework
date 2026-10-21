@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"expected": "abc", "actual": "abc", "paths": ["src/a.rs"], "allowed": ["src/a.rs"]}, "expected_status": "candidate"}
+{"id": "negative", "input": {"expected": "abc", "actual": "def", "paths": ["src/a.rs"], "allowed": ["src/a.rs"]}, "expected_not_status": "candidate"}

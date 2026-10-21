@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:workflow-definition:v1",
+  "description": "CODE-01 structural definition only. Rust semantic validation is additionally required; this schema grants no authority and implements no runtime.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.workflow-definition/v1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "semantic_version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/port"
+      },
+      "minItems": 0
+    },
+    "runtime": {
+      "$ref": "#/$defs/runtime_limits"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      },
+      "minItems": 1
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "schema_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "required": [
+          "name",
+          "schema_ref",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "success_all": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "failure": {
+      "type": "object",
+      "properties": {
+        "repair_attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "no_progress_limit": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "final_action": {
+          "enum": [
+            "fail",
+            "block",
+            "review"
+          ]
+        },
+        "checkpoint_required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "repair_attempts",
+        "no_progress_limit",
+        "final_action",
+        "checkpoint_required"
+      ],
+      "additionalProperties": false
+    },
+    "compensations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/compensation"
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "semantic_version",
+    "inputs",
+    "runtime",
+    "nodes",
+    "outputs",
+    "success_all",
+    "failure",
+    "compensations"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "runtime_limits": {
+      "type": "object",
+      "properties": {
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_parallel_tools": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_cost_micro_usd": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "timeout_seconds",
+        "max_iterations",
+        "max_parallel_tools",
+        "max_cost_micro_usd"
+      ],
+      "additionalProperties": false
+    },
+    "port": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "schema_ref",
+        "required"
+      ],
+      "additionalProperties": false
+    },
+    "executor": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "agent",
+            "tool"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "workflow_input"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "node_output"
+            },
+            "node_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "output": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "node_id",
+            "output"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "node": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "executor": {
+          "$ref": "#/$defs/executor"
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/port"
+          },
+          "minItems": 0
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/port"
+          },
+          "minItems": 0
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "$ref": "#/$defs/source"
+              }
+            },
+            "required": [
+              "input",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "authorization_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "compensation_only": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "executor",
+        "depends_on",
+        "inputs",
+        "outputs",
+        "bindings",
+        "required_capabilities",
+        "timeout_seconds",
+        "compensation_only"
+      ],
+      "additionalProperties": false
+    },
+    "compensation": {
+      "type": "object",
+      "properties": {
+        "node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "compensation_node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authorization_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reconciliation_policy_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "node_id",
+        "compensation_node_id",
+        "authorization_ref",
+        "reconciliation_policy_ref"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

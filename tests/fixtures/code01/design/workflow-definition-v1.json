@@ -1,0 +1,118 @@
+{
+  "schema_version": "melissa.workflow-definition/v1",
+  "id": "sample-workflow-definition-only",
+  "semantic_version": "1.0.0",
+  "inputs": [
+    {
+      "name": "workspace",
+      "schema_ref": "sample.workspace/v1",
+      "required": true
+    }
+  ],
+  "runtime": {
+    "timeout_seconds": 600,
+    "max_iterations": 8,
+    "max_parallel_tools": 2,
+    "max_cost_micro_usd": 0
+  },
+  "nodes": [
+    {
+      "id": "inspect",
+      "executor": {
+        "kind": "agent",
+        "id": "melissa.code.repository-analyst"
+      },
+      "depends_on": [],
+      "inputs": [
+        {
+          "name": "workspace",
+          "schema_ref": "sample.workspace/v1",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "diagnostics",
+          "schema_ref": "sample.diagnostics/v1",
+          "required": true
+        }
+      ],
+      "bindings": [
+        {
+          "input": "workspace",
+          "source": {
+            "kind": "workflow_input",
+            "name": "workspace"
+          }
+        }
+      ],
+      "required_capabilities": [
+        "workspace.read"
+      ],
+      "authorization_ref": "sample-authorization-not-authenticated",
+      "timeout_seconds": 60,
+      "compensation_only": false
+    },
+    {
+      "id": "build",
+      "executor": {
+        "kind": "tool",
+        "id": "code.build"
+      },
+      "depends_on": [
+        "inspect"
+      ],
+      "inputs": [
+        {
+          "name": "diagnostics",
+          "schema_ref": "sample.diagnostics/v1",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "schema_ref": "sample.build-result/v1",
+          "required": true
+        }
+      ],
+      "bindings": [
+        {
+          "input": "diagnostics",
+          "source": {
+            "kind": "node_output",
+            "node_id": "inspect",
+            "output": "diagnostics"
+          }
+        }
+      ],
+      "required_capabilities": [
+        "process.execute_scoped"
+      ],
+      "authorization_ref": "sample-authorization-not-authenticated",
+      "timeout_seconds": 120,
+      "compensation_only": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "sample-build-result",
+      "schema_ref": "sample.build-result/v1",
+      "source": {
+        "kind": "node_output",
+        "node_id": "build",
+        "output": "result"
+      }
+    }
+  ],
+  "success_all": [
+    "Sample build criterion definition; no execution or acceptance claimed"
+  ],
+  "failure": {
+    "repair_attempts": 3,
+    "no_progress_limit": 2,
+    "final_action": "review",
+    "checkpoint_required": true
+  },
+  "compensations": []
+}

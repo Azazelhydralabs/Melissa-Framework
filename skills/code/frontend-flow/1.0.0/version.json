@@ -1,0 +1,19 @@
+{
+  "schema_version": "melissa.skill-version/v1",
+  "pin": {
+    "skill_id": "melissa.code.skill.frontend-flow",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:8896162d7deba38a6f8c0dd38a4c7051b2f5259d26fd33a5326f26d2e6f4402c"
+  },
+  "definition_digest": "blake3:793b83ab5bb41c33388b2c151a23e0077af504af475f357e774d4ab738d0e41e",
+  "publisher_id": "melissa-local-development",
+  "state": "tested",
+  "required_capabilities": [
+    "workspace.read"
+  ],
+  "evaluation_digest": null,
+  "review_artifact_ref": null,
+  "signature": null,
+  "revocation_ref": null,
+  "rollback_to": null
+}

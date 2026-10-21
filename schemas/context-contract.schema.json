@@ -1,0 +1,294 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:context-contract:v1",
+  "description": "CODE-01 structural definition only. Rust semantic validation is additionally required; this schema grants no authority and implements no runtime.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.context-contract/v1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "namespace": {
+      "type": "string",
+      "minLength": 1
+    },
+    "max_context_tokens": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "reserved_output_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/context_item"
+      },
+      "minItems": 4
+    },
+    "selected_skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pin": {
+            "$ref": "#/$defs/skill_pin"
+          },
+          "context_item_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "pin",
+          "context_item_id"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "continuation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/continuation"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "task_binding": {
+      "type": "object",
+      "properties": {
+        "module": {
+          "enum": [
+            "core",
+            "code",
+            "cyber",
+            "science",
+            "game",
+            "repack",
+            "fit",
+            "grid"
+          ]
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "workspace_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_snapshot_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        },
+        "acceptance_contract_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "module",
+        "goal",
+        "workspace_ref",
+        "input_snapshot_digest",
+        "acceptance_contract_digest"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "task_id",
+    "namespace",
+    "max_context_tokens",
+    "reserved_output_tokens",
+    "items",
+    "selected_skills",
+    "task_binding"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "skill_pin": {
+      "type": "object",
+      "properties": {
+        "skill_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "semantic_version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "skill_id",
+        "semantic_version",
+        "content_digest"
+      ],
+      "additionalProperties": false
+    },
+    "context_item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "section": {
+          "enum": [
+            "system_contract",
+            "task_contract",
+            "relevant_skills",
+            "workspace_context",
+            "evidence",
+            "recent_observations",
+            "remaining_budget",
+            "output_schema"
+          ]
+        },
+        "source_kind": {
+          "enum": [
+            "system_contract",
+            "task_contract",
+            "skill",
+            "tool_schema",
+            "repository",
+            "evidence",
+            "observation",
+            "budget",
+            "output_schema",
+            "memory",
+            "web"
+          ]
+        },
+        "trust": {
+          "enum": [
+            "host_contract",
+            "user_task",
+            "untrusted_data"
+          ]
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        },
+        "namespace": {
+          "type": "string",
+          "minLength": 1
+        },
+        "token_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "full_content": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "section",
+        "source_kind",
+        "trust",
+        "source_ref",
+        "source_version",
+        "content_digest",
+        "namespace",
+        "token_count",
+        "full_content"
+      ],
+      "additionalProperties": false
+    },
+    "continuation": {
+      "type": "object",
+      "properties": {
+        "checkpoint_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_contract_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        },
+        "workspace_snapshot_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        },
+        "authorization_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cancellation_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "remaining_budget_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "open_effect_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "rejected_hypotheses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "open_issue_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "checkpoint_ref",
+        "task_contract_digest",
+        "workspace_snapshot_digest",
+        "authorization_ref",
+        "cancellation_ref",
+        "remaining_budget_ref",
+        "open_effect_refs",
+        "rejected_hypotheses",
+        "open_issue_refs"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

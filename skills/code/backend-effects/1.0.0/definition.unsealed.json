@@ -1,0 +1,74 @@
+{
+  "schema_version": "melissa.skill-definition/v1",
+  "id": "melissa.code.skill.backend-effects",
+  "module": "code",
+  "name_tr": "Backend API ve gerçek etkiler",
+  "description_tr": "API yanıtı ile gerçek veri/etki durumunun tutarlı olduğunu sınayacak sözleşme kur.",
+  "use_when": [
+    "backend_api",
+    "idempotency"
+  ],
+  "manifest": {
+    "entrypoint": "SKILL.md",
+    "category": "coding",
+    "trust_level": "first_party",
+    "routing": {
+      "intents": [
+        "backend_api",
+        "idempotency"
+      ],
+      "priority": 80
+    },
+    "required_tools": [
+      "fs.read",
+      "code.tests"
+    ],
+    "required_capabilities": [
+      "workspace.read"
+    ],
+    "prerequisites": [
+      "host-reviewed captured package and exact task policy"
+    ],
+    "runtime": {
+      "timeout_seconds": 1800,
+      "max_iterations": 64,
+      "max_parallel_tools": 2,
+      "max_cost_micro_usd": 1250000
+    },
+    "input_schema_ref": "schemas/input.json",
+    "output_schema_ref": "schemas/output.json",
+    "verification": [
+      {
+        "check": "source_bound_real_tool_evidence",
+        "required": true
+      },
+      {
+        "check": "negative_case_and_scope_preservation",
+        "required": true
+      }
+    ],
+    "evaluation": {
+      "dataset_ref": "evals/cases.jsonl",
+      "assertions_ref": "evals/assertions.json",
+      "min_success_rate": 1.0
+    }
+  },
+  "files": [],
+  "scripts": [
+    {
+      "file_path": "scripts/assess.py",
+      "interpreter_ref": "code06-pinned-python/3.13.5",
+      "input_schema_ref": "schemas/input.json",
+      "output_schema_ref": "schemas/output.json",
+      "required_capabilities": [],
+      "timeout_seconds": 30
+    }
+  ],
+  "templates": [
+    {
+      "file_path": "assets/report.md",
+      "input_schema_ref": "schemas/report-input.json",
+      "output_schema_ref": "schemas/report-output.json"
+    }
+  ]
+}

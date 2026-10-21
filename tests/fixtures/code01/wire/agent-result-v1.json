@@ -1,0 +1,21 @@
+{
+  "schema_version": "melissa.agent-result/v1",
+  "task_id": "fixture:task:code:1",
+  "run_id": "fixture:run:1",
+  "profile_id": "melissa.code.debugger",
+  "status": "completed",
+  "summary": "Static contract fixture only; no actual repair or acceptance occurred.",
+  "artifact_refs": [
+    "fixture:artifact:patch"
+  ],
+  "evidence_refs": [
+    "fixture:evidence:1"
+  ],
+  "domain_result": {
+    "fixture_only": true,
+    "root_cause": "illustrative off-by-one"
+  },
+  "open_issues": [],
+  "next_actions": [],
+  "verification_status": "passed"
+}

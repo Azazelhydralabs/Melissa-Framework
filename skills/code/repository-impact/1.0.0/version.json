@@ -1,0 +1,19 @@
+{
+  "schema_version": "melissa.skill-version/v1",
+  "pin": {
+    "skill_id": "melissa.code.skill.repository-impact",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:261dc6eabc2cb2809f0a7918e082fee469cacc47360bdc67024973a03a28292b"
+  },
+  "definition_digest": "blake3:3dd1d93dc7a858a80fe0f5410b226c3ea1831743812d644777135a5ff829c4c5",
+  "publisher_id": "melissa-local-development",
+  "state": "tested",
+  "required_capabilities": [
+    "workspace.read"
+  ],
+  "evaluation_digest": null,
+  "review_artifact_ref": null,
+  "signature": null,
+  "revocation_ref": null,
+  "rollback_to": null
+}

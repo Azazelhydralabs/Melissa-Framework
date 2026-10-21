@@ -1,0 +1,25 @@
+[package]
+name = "melissa-build-test"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+melissa-repository = { path = "../repository" }
+melissa-container-executor = { path = "../container-executor" }
+melissa-execution-broker = { path = "../execution-broker" }
+melissa-local-store = { path = "../local-store" }
+serde.workspace = true
+serde_json.workspace = true
+blake3.workspace = true
+melissa-core-contracts = { path = "../core-contracts" }
+melissa-model-gateway = { path = "../model-gateway" }
+getrandom.workspace = true
+tokio.workspace = true
+sha2 = "=0.10.9"
+
+[dev-dependencies]
+melissa-core-contracts = { path = "../core-contracts" }
+tempfile.workspace = true
+zeroize.workspace = true
+windows-sys = { workspace = true, features = ["Win32_Security_Cryptography"] }

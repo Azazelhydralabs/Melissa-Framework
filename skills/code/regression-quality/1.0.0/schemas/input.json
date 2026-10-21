@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "runs": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "runs"
+  ],
+  "additionalProperties": false
+}

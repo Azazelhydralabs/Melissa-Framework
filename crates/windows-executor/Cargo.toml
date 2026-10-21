@@ -1,0 +1,19 @@
+[package]
+name = "melissa-windows-executor"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+blake3.workspace = true
+getrandom.workspace = true
+serde.workspace = true
+windows-sys = { workspace = true, features = ["Wdk_Foundation", "Wdk_Storage_FileSystem", "Win32_Foundation", "Win32_Security", "Win32_Security_Authorization", "Win32_Security_Isolation", "Win32_Storage_FileSystem", "Win32_System_Threading", "Win32_System_JobObjects", "Win32_System_IO", "Win32_System_Pipes", "Win32_System_Memory", "Win32_System_Com", "Win32_System_SystemServices", "Win32_System_SystemInformation", "Win32_System_LibraryLoader", "Win32_UI_Shell", "Win32_Networking_WinSock"] }
+
+[dev-dependencies]
+serde_json.workspace = true
+tempfile.workspace = true
+
+[[bin]]
+name = "melissa-executor-probe"
+path = "src/bin/probe.rs"

@@ -1,0 +1,833 @@
+{
+  "schema_version": "melissa.integration-catalog/v1",
+  "entries": [
+    {
+      "module": "core",
+      "category": "Async Runtime",
+      "technologies_from_source": "Tokio",
+      "source_line": 291,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "HTTP",
+      "technologies_from_source": "Axum, reqwest",
+      "source_line": 292,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Şema",
+      "technologies_from_source": "serde, schemars, validator",
+      "source_line": 293,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Database",
+      "technologies_from_source": "SQLx",
+      "source_line": 294,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "MCP",
+      "technologies_from_source": "rmcp",
+      "source_line": 295,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "A2A",
+      "technologies_from_source": "Resmi A2A Rust SDK veya uyumlu adaptör",
+      "source_line": 296,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Git",
+      "technologies_from_source": "git2 / Git CLI",
+      "source_line": 297,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Code Parsing",
+      "technologies_from_source": "Tree-sitter",
+      "source_line": 298,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Code Intelligence",
+      "technologies_from_source": "LSP",
+      "source_line": 299,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "File Search",
+      "technologies_from_source": "ripgrep",
+      "source_line": 300,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Glob Search",
+      "technologies_from_source": "globset, ignore",
+      "source_line": 301,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Diff/Patch",
+      "technologies_from_source": "Git diff + özel patch validator",
+      "source_line": 302,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Browser",
+      "technologies_from_source": "Playwright",
+      "source_line": 303,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Desktop Automation",
+      "technologies_from_source": "Windows UI Automation API",
+      "source_line": 304,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Document Parsing",
+      "technologies_from_source": "Pandoc, PDF parser, Office adapters",
+      "source_line": 305,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Structured Data",
+      "technologies_from_source": "Polars, Arrow, DuckDB",
+      "source_line": 306,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Vector Search",
+      "technologies_from_source": "Qdrant veya yerel indeks",
+      "source_line": 307,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Image Processing",
+      "technologies_from_source": "ImageMagick, libvips",
+      "source_line": 308,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Media",
+      "technologies_from_source": "FFmpeg, ffprobe",
+      "source_line": 309,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Telemetry",
+      "technologies_from_source": "tracing, OpenTelemetry",
+      "source_line": 310,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "CLI",
+      "technologies_from_source": "clap, inquire",
+      "source_line": 311,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "core",
+      "category": "Secret Storage",
+      "technologies_from_source": "Windows Credential Manager / DPAPI",
+      "source_line": 312,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Matematik",
+      "technologies_from_source": "SymPy, SageMath",
+      "source_line": 323,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Sayısal analiz",
+      "technologies_from_source": "NumPy, SciPy",
+      "source_line": 324,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Yüksek performans",
+      "technologies_from_source": "JAX, Numba",
+      "source_line": 325,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Makine öğrenimi",
+      "technologies_from_source": "PyTorch, scikit-learn",
+      "source_line": 326,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Optimizasyon",
+      "technologies_from_source": "SciPy Optimize, OR-Tools, Optuna",
+      "source_line": 327,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "İstatistik",
+      "technologies_from_source": "statsmodels, PyMC",
+      "source_line": 328,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Fizik",
+      "technologies_from_source": "SciPy, PETSc, FEniCSx",
+      "source_line": 329,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "CFD",
+      "technologies_from_source": "OpenFOAM",
+      "source_line": 330,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Moleküler dinamik",
+      "technologies_from_source": "OpenMM",
+      "source_line": 331,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Kimya",
+      "technologies_from_source": "RDKit",
+      "source_line": 332,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Batarya",
+      "technologies_from_source": "PyBaMM",
+      "source_line": 333,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "CAD",
+      "technologies_from_source": "FreeCAD Python API, OpenCascade",
+      "source_line": 334,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Sinyal analizi",
+      "technologies_from_source": "SciPy Signal",
+      "source_line": 335,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Veri formatları",
+      "technologies_from_source": "HDF5, NetCDF, Parquet",
+      "source_line": 336,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Literatür",
+      "technologies_from_source": "Crossref, OpenAlex, Semantic Scholar, arXiv",
+      "source_line": 337,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Grafik",
+      "technologies_from_source": "Matplotlib, Plotly, PyVista",
+      "source_line": 338,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Deney yönetimi",
+      "technologies_from_source": "MLflow",
+      "source_line": 339,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "science",
+      "category": "Notebook",
+      "technologies_from_source": "Jupyter kernel / nbclient",
+      "source_line": 340,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "3D Modelleme",
+      "technologies_from_source": "Blender Python API",
+      "source_line": 372,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Rigging",
+      "technologies_from_source": "Blender armature API, Rigify",
+      "source_line": 373,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Animasyon",
+      "technologies_from_source": "Blender Actions, NLA",
+      "source_line": 374,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Geometri",
+      "technologies_from_source": "Blender Geometry Nodes",
+      "source_line": 375,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Tekstür",
+      "technologies_from_source": "Substance araçları, MaterialX, OpenImageIO",
+      "source_line": 376,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "3D veri",
+      "technologies_from_source": "glTF, USD, FBX adaptörleri",
+      "source_line": 377,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Unreal",
+      "technologies_from_source": "Unreal Python Editor API",
+      "source_line": 378,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Unreal kod",
+      "technologies_from_source": "C++, Blueprint",
+      "source_line": 379,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Unreal efekt",
+      "technologies_from_source": "Niagara",
+      "source_line": 380,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Unreal test",
+      "technologies_from_source": "Automation Framework, Gauntlet",
+      "source_line": 381,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Unity",
+      "technologies_from_source": "Unity Editor API, C#",
+      "source_line": 382,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Unity test",
+      "technologies_from_source": "Unity Test Framework",
+      "source_line": 383,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Kontrol",
+      "technologies_from_source": "Oyun içi telemetry bridge",
+      "source_line": 384,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Input",
+      "technologies_from_source": "Test controller / simüle gamepad",
+      "source_line": 385,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Görsel analiz",
+      "technologies_from_source": "Screenshot comparison, OpenCV",
+      "source_line": 386,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Performans",
+      "technologies_from_source": "Unreal Insights, Unity Profiler",
+      "source_line": 387,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Oyun derleme",
+      "technologies_from_source": "Unreal UAT, Unity batchmode",
+      "source_line": 388,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "game",
+      "category": "Asset QA",
+      "technologies_from_source": "Custom Blender validator",
+      "source_line": 389,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Genel sıkıştırma",
+      "technologies_from_source": "Zstandard",
+      "source_line": 428,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Yüksek oran",
+      "technologies_from_source": "LZMA2",
+      "source_line": 429,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Hızlı blok sıkıştırma",
+      "technologies_from_source": "LZ4",
+      "source_line": 430,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Metin/metadata",
+      "technologies_from_source": "Brotli",
+      "source_line": 431,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Arşiv uyumu",
+      "technologies_from_source": "7-Zip SDK / libarchive",
+      "source_line": 432,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Chunking",
+      "technologies_from_source": "FastCDC benzeri CDC",
+      "source_line": 433,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Deduplikasyon",
+      "technologies_from_source": "Content-addressed chunk store",
+      "source_line": 434,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Delta",
+      "technologies_from_source": "xdelta3, bsdiff türü algoritmalar",
+      "source_line": 435,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Bütünlük",
+      "technologies_from_source": "BLAKE3, SHA-256",
+      "source_line": 436,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Paket manifest",
+      "technologies_from_source": "CBOR / JSON",
+      "source_line": 437,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Windows installer",
+      "technologies_from_source": "Inno Setup / özel bootstrapper",
+      "source_line": 438,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "İmzalama",
+      "technologies_from_source": "Windows Authenticode",
+      "source_line": 439,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Dosya değişiklikleri",
+      "technologies_from_source": "USN Journal / filesystem watcher",
+      "source_line": 440,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Hız ölçümü",
+      "technologies_from_source": "Hyperfine ve özel benchmark",
+      "source_line": 441,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "repack",
+      "category": "Disk analizi",
+      "technologies_from_source": "Native Rust file I/O",
+      "source_line": 442,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Network inventory",
+      "technologies_from_source": "Nmap, Masscan",
+      "source_line": 531,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "HTTP discovery",
+      "technologies_from_source": "httpx, hakrawler",
+      "source_line": 532,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Template-based analysis",
+      "technologies_from_source": "Nuclei",
+      "source_line": 533,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Web DAST",
+      "technologies_from_source": "OWASP ZAP",
+      "source_line": 534,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "HTTP inspection",
+      "technologies_from_source": "mitmproxy, Burp Suite",
+      "source_line": 535,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Static analysis",
+      "technologies_from_source": "Semgrep, CodeQL",
+      "source_line": 536,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Dependency",
+      "technologies_from_source": "OSV-Scanner, Grype, Trivy",
+      "source_line": 537,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "SBOM",
+      "technologies_from_source": "Syft",
+      "source_line": 538,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Secrets",
+      "technologies_from_source": "Gitleaks",
+      "source_line": 539,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "IaC",
+      "technologies_from_source": "Checkov, Trivy config",
+      "source_line": 540,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Cloud",
+      "technologies_from_source": "Prowler, ScoutSuite",
+      "source_line": 541,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Endpoint telemetry",
+      "technologies_from_source": "osquery",
+      "source_line": 542,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Network monitoring",
+      "technologies_from_source": "Zeek, Suricata",
+      "source_line": 543,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Detection rules",
+      "technologies_from_source": "Sigma, YARA",
+      "source_line": 544,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Binary analysis",
+      "technologies_from_source": "Ghidra, Capstone, Rizin",
+      "source_line": 545,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Fuzzing",
+      "technologies_from_source": "AFL++, libFuzzer, cargo-fuzz",
+      "source_line": 546,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Protocol tests",
+      "technologies_from_source": "boofuzz",
+      "source_line": 547,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Adversary emulation",
+      "technologies_from_source": "MITRE CALDERA",
+      "source_line": 548,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    },
+    {
+      "module": "cyber",
+      "category": "Threat knowledge",
+      "technologies_from_source": "MITRE ATT&CK, CWE, NVD, CISA KEV",
+      "source_line": 549,
+      "implementation": "not_implemented",
+      "version_compatibility": "not_verified",
+      "license_review": "required_before_distribution"
+    }
+  ]
+}

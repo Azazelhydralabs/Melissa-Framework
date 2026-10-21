@@ -1,0 +1,14 @@
+{
+  "name": "melissa-code06-worker-tools",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "typescript": "6.0.3",
+    "typescript-language-server": "6.0.2",
+    "pyright": "1.1.414",
+    "eslint": "10.13.0",
+    "typescript-eslint": "8.72.0",
+    "@types/node": "24.19.2",
+    "prettier": "3.9.10"
+  }
+}

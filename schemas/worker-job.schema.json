@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:worker-job:v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.worker-job/v1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "invocation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "attempt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "permit_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "arguments_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cancellation_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lease_generation": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "input_artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "max_wall_time_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_cpu_time_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_memory_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_disk_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_output_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_gpu_vram_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "network_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "max_wall_time_ms",
+        "max_cpu_time_ms",
+        "max_memory_bytes",
+        "max_disk_bytes",
+        "max_output_bytes",
+        "max_gpu_vram_bytes",
+        "network_scope"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "task_id",
+    "invocation_id",
+    "attempt_id",
+    "permit_ref",
+    "arguments_digest",
+    "cancellation_ref",
+    "lease_generation",
+    "input_artifact_refs",
+    "limits"
+  ],
+  "additionalProperties": false
+}

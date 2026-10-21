@@ -1,0 +1,130 @@
+{
+  "schema_version": "melissa.skill-definition/v1",
+  "id": "melissa.code.skill.frontend-flow",
+  "module": "code",
+  "name_tr": "Frontend akışı ve erişilebilirlik",
+  "description_tr": "Kullanıcının gerçek ekran akışını durum, odak, klavye ve responsive davranışla tamamla.",
+  "use_when": [
+    "frontend",
+    "accessibility"
+  ],
+  "manifest": {
+    "entrypoint": "SKILL.md",
+    "category": "coding",
+    "trust_level": "first_party",
+    "routing": {
+      "intents": [
+        "frontend",
+        "accessibility"
+      ],
+      "priority": 80
+    },
+    "required_tools": [
+      "fs.read",
+      "code.tests"
+    ],
+    "required_capabilities": [
+      "workspace.read"
+    ],
+    "prerequisites": [
+      "host-reviewed captured package and exact task policy"
+    ],
+    "runtime": {
+      "timeout_seconds": 1800,
+      "max_iterations": 64,
+      "max_parallel_tools": 2,
+      "max_cost_micro_usd": 1250000
+    },
+    "input_schema_ref": "schemas/input.json",
+    "output_schema_ref": "schemas/output.json",
+    "verification": [
+      {
+        "check": "source_bound_real_tool_evidence",
+        "required": true
+      },
+      {
+        "check": "negative_case_and_scope_preservation",
+        "required": true
+      }
+    ],
+    "evaluation": {
+      "dataset_ref": "evals/cases.jsonl",
+      "assertions_ref": "evals/assertions.json",
+      "min_success_rate": 1.0
+    }
+  },
+  "files": [
+    {
+      "path": "SKILL.md",
+      "content_digest": "blake3:791b4a7e674fec36bc105ea91428701caff2aa71781c3c0789e6a63a23fe3d54",
+      "role": "entrypoint"
+    },
+    {
+      "path": "assets/report.md",
+      "content_digest": "blake3:434f08a44509eefcc818e8ffa20949e9a344e1c8c07e640d249ff64199dbec62",
+      "role": "template"
+    },
+    {
+      "path": "evals/assertions.json",
+      "content_digest": "blake3:fbb8229e454a30fb69702cf8fe35227645c7137f88b374b104ae1e4d19a44786",
+      "role": "evaluation"
+    },
+    {
+      "path": "evals/cases.jsonl",
+      "content_digest": "blake3:7daffe6e052b6da1d5aaf95915226d50475637d1e61a7d5a1d78df0c30a73ed7",
+      "role": "evaluation"
+    },
+    {
+      "path": "references/acceptance.md",
+      "content_digest": "blake3:2a7a779506a86f1f5942039996281cf0cb84044c00bc19d53f0f5b173950ee19",
+      "role": "reference"
+    },
+    {
+      "path": "schemas/input.json",
+      "content_digest": "blake3:7dce10d327d3fcb4009a71df395892512ca23ab5e737176161bdf19f07f6acdc",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/output.json",
+      "content_digest": "blake3:a839a305ab153d5e549af04db0cde7691722bf780b16c92c7a98fabf76111969",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/report-input.json",
+      "content_digest": "blake3:057757f75287575178678502c2c5e5b7a09576c66dc45db4c4549721ae85024a",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/report-output.json",
+      "content_digest": "blake3:138a8766305285af49d60d11ce265b4a9977d6c4f8be210a5224ac7dc8428a08",
+      "role": "schema"
+    },
+    {
+      "path": "scripts/assess.py",
+      "content_digest": "blake3:e620a87120c274961c6a3280ebec546376f4bdb57e06e06a8deeba1333655c84",
+      "role": "script"
+    },
+    {
+      "path": "tests/README.md",
+      "content_digest": "blake3:a173a375de7832634250ba4ee11d2be8505ad3ce5d1ebdf868c49822adf9c6f2",
+      "role": "test"
+    }
+  ],
+  "scripts": [
+    {
+      "file_path": "scripts/assess.py",
+      "interpreter_ref": "code06-pinned-python/3.13.5",
+      "input_schema_ref": "schemas/input.json",
+      "output_schema_ref": "schemas/output.json",
+      "required_capabilities": [],
+      "timeout_seconds": 30
+    }
+  ],
+  "templates": [
+    {
+      "file_path": "assets/report.md",
+      "input_schema_ref": "schemas/report-input.json",
+      "output_schema_ref": "schemas/report-output.json"
+    }
+  ]
+}

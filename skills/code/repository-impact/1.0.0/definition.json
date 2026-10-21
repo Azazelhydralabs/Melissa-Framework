@@ -1,0 +1,131 @@
+{
+  "schema_version": "melissa.skill-definition/v1",
+  "id": "melissa.code.skill.repository-impact",
+  "module": "code",
+  "name_tr": "Repository ve etki haritası",
+  "description_tr": "Değişikliğin doğru pakete, sembole, tüketiciye ve teste ulaşmasını sağla.",
+  "use_when": [
+    "repository_discovery",
+    "impact_analysis"
+  ],
+  "manifest": {
+    "entrypoint": "SKILL.md",
+    "category": "coding",
+    "trust_level": "first_party",
+    "routing": {
+      "intents": [
+        "repository_discovery",
+        "impact_analysis"
+      ],
+      "priority": 80
+    },
+    "required_tools": [
+      "fs.read",
+      "code.symbols",
+      "code.references"
+    ],
+    "required_capabilities": [
+      "workspace.read"
+    ],
+    "prerequisites": [
+      "host-reviewed captured package and exact task policy"
+    ],
+    "runtime": {
+      "timeout_seconds": 1800,
+      "max_iterations": 64,
+      "max_parallel_tools": 2,
+      "max_cost_micro_usd": 1250000
+    },
+    "input_schema_ref": "schemas/input.json",
+    "output_schema_ref": "schemas/output.json",
+    "verification": [
+      {
+        "check": "source_bound_real_tool_evidence",
+        "required": true
+      },
+      {
+        "check": "negative_case_and_scope_preservation",
+        "required": true
+      }
+    ],
+    "evaluation": {
+      "dataset_ref": "evals/cases.jsonl",
+      "assertions_ref": "evals/assertions.json",
+      "min_success_rate": 1.0
+    }
+  },
+  "files": [
+    {
+      "path": "SKILL.md",
+      "content_digest": "blake3:c70ba91529e3fc05d469cbbd5c5716772d2104471e9a3ff170ed693411e5e82d",
+      "role": "entrypoint"
+    },
+    {
+      "path": "assets/report.md",
+      "content_digest": "blake3:434f08a44509eefcc818e8ffa20949e9a344e1c8c07e640d249ff64199dbec62",
+      "role": "template"
+    },
+    {
+      "path": "evals/assertions.json",
+      "content_digest": "blake3:fbb8229e454a30fb69702cf8fe35227645c7137f88b374b104ae1e4d19a44786",
+      "role": "evaluation"
+    },
+    {
+      "path": "evals/cases.jsonl",
+      "content_digest": "blake3:4a9628b6361de3e3dee4f05977a35d395495b1f4fb277f4e485471aa6e8ae174",
+      "role": "evaluation"
+    },
+    {
+      "path": "references/acceptance.md",
+      "content_digest": "blake3:cf3ccbce0a72412918f1c99f3d8c3e73323e90849252537aff7a230047d39117",
+      "role": "reference"
+    },
+    {
+      "path": "schemas/input.json",
+      "content_digest": "blake3:506ca56652f8e1efb4d62c4b132bf5f16e42bf9b9a029b781c043acdbbe5b130",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/output.json",
+      "content_digest": "blake3:a839a305ab153d5e549af04db0cde7691722bf780b16c92c7a98fabf76111969",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/report-input.json",
+      "content_digest": "blake3:057757f75287575178678502c2c5e5b7a09576c66dc45db4c4549721ae85024a",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/report-output.json",
+      "content_digest": "blake3:138a8766305285af49d60d11ce265b4a9977d6c4f8be210a5224ac7dc8428a08",
+      "role": "schema"
+    },
+    {
+      "path": "scripts/assess.py",
+      "content_digest": "blake3:43cb9e21499953e1ca72afafff790a50764bb8b28a93c58dd6cf3b093911d370",
+      "role": "script"
+    },
+    {
+      "path": "tests/README.md",
+      "content_digest": "blake3:a173a375de7832634250ba4ee11d2be8505ad3ce5d1ebdf868c49822adf9c6f2",
+      "role": "test"
+    }
+  ],
+  "scripts": [
+    {
+      "file_path": "scripts/assess.py",
+      "interpreter_ref": "code06-pinned-python/3.13.5",
+      "input_schema_ref": "schemas/input.json",
+      "output_schema_ref": "schemas/output.json",
+      "required_capabilities": [],
+      "timeout_seconds": 30
+    }
+  ],
+  "templates": [
+    {
+      "file_path": "assets/report.md",
+      "input_schema_ref": "schemas/report-input.json",
+      "output_schema_ref": "schemas/report-output.json"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "melissa.skill-version/v1",
+  "pin": {
+    "skill_id": "melissa.code.skill.regression-quality",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:3076d0601391efd822a0c72903df14a0e52af68641a44018fbd24ebe53ada474"
+  },
+  "definition_digest": "blake3:7cfaadb8a5e283b5a32185133b45d18a1566cd86663736eeb3b6df07342ec4d6",
+  "publisher_id": "melissa-local-development",
+  "state": "tested",
+  "required_capabilities": [
+    "workspace.read"
+  ],
+  "evaluation_digest": null,
+  "review_artifact_ref": null,
+  "signature": null,
+  "revocation_ref": null,
+  "rollback_to": null
+}

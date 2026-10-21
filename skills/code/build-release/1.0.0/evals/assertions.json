@@ -1,0 +1,10 @@
+{
+  "schema_version": "melissa.development-assertions/v1",
+  "cases": [
+    "positive",
+    "negative"
+  ],
+  "min_success_rate": 1.0,
+  "held_out": false,
+  "real_ai": false
+}

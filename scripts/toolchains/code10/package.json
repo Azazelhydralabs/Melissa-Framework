@@ -1,0 +1,8 @@
+{
+  "name": "melissa-code10-worker-tools",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "playwright": "1.64.0"
+  }
+}

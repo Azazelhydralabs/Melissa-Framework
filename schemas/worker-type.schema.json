@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:worker-type:v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.worker-type/v1"
+    },
+    "id": {
+      "enum": [
+        "generic",
+        "browser",
+        "desktop-ui",
+        "science-cpu",
+        "science-gpu",
+        "blender",
+        "unreal-build",
+        "unreal-test",
+        "unity",
+        "cyber-lab",
+        "compression",
+        "windows-install-vm"
+      ]
+    },
+    "name_tr": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "declared_platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "purpose_tr": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_families": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "requirements_tr": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 3,
+      "uniqueItems": true
+    },
+    "isolation_contract_tr": {
+      "type": "string",
+      "minLength": 1
+    },
+    "job_contract": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 9,
+          "uniqueItems": true
+        },
+        "returns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 9,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "required",
+        "returns"
+      ],
+      "additionalProperties": false
+    },
+    "resource_policy": {
+      "type": "object",
+      "properties": {
+        "authority": {
+          "const": "task_and_broker"
+        },
+        "limits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 7,
+          "uniqueItems": true
+        },
+        "unbounded_jobs": {
+          "const": false
+        }
+      },
+      "required": [
+        "authority",
+        "limits",
+        "unbounded_jobs"
+      ],
+      "additionalProperties": false
+    },
+    "lifecycle": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 8,
+      "uniqueItems": true
+    },
+    "acceptance_checks_tr": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 4,
+      "uniqueItems": true
+    },
+    "implementation": {
+      "const": {
+        "definition": "complete",
+        "executor": "not_implemented",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "name_tr",
+    "modules",
+    "declared_platforms",
+    "purpose_tr",
+    "tool_families",
+    "requirements_tr",
+    "isolation_contract_tr",
+    "job_contract",
+    "resource_policy",
+    "lifecycle",
+    "acceptance_checks_tr",
+    "implementation"
+  ],
+  "additionalProperties": false
+}

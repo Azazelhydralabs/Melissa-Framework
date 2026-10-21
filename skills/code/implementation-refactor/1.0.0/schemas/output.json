@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.helper-observation/v1"
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "requires_evidence",
+        "rejected"
+      ]
+    },
+    "findings": {
+      "type": "array"
+    },
+    "authority": {
+      "const": "untrusted_observation"
+    },
+    "protected_acceptance": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "findings",
+    "authority",
+    "protected_acceptance"
+  ],
+  "additionalProperties": false
+}

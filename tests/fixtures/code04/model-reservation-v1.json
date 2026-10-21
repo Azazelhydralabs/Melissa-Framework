@@ -1,0 +1,14 @@
+{
+  "schema_version": "melissa.model-reservation/v1",
+  "request_id": "model:fixture:1",
+  "task_id": "fixture:task:code:1",
+  "profile_id": "melissa.code.debugger",
+  "provider_id": "fixture.provider",
+  "model_id": "fixture.model",
+  "request_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "pricing_digest": null,
+  "reserved_input_tokens": 100,
+  "reserved_output_tokens": 20,
+  "reserved_cost_micro_usd": 1000,
+  "created_at_unix_ms": 1
+}

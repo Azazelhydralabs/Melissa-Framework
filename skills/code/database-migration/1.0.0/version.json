@@ -1,0 +1,19 @@
+{
+  "schema_version": "melissa.skill-version/v1",
+  "pin": {
+    "skill_id": "melissa.code.skill.database-migration",
+    "semantic_version": "1.0.0",
+    "content_digest": "blake3:eb69a9faad5de6281c4cc681406aa8d9fc509403a68555ccfd50c83e30e494bb"
+  },
+  "definition_digest": "blake3:3fddf70f7c8828884438824b79c62567adbb3a7f4c7b4b2ab6c7aed3204ad5bf",
+  "publisher_id": "melissa-local-development",
+  "state": "tested",
+  "required_capabilities": [
+    "workspace.read"
+  ],
+  "evaluation_digest": null,
+  "review_artifact_ref": null,
+  "signature": null,
+  "revocation_ref": null,
+  "rollback_to": null
+}

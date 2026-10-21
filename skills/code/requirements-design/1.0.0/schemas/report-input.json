@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "task": {},
+    "sources": {},
+    "observations": {},
+    "open_issues": {},
+    "acceptance": {}
+  },
+  "required": [
+    "task",
+    "sources",
+    "observations",
+    "open_issues",
+    "acceptance"
+  ],
+  "additionalProperties": false
+}

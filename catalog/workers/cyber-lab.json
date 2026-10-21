@@ -1,0 +1,81 @@
+{
+  "schema_version": "melissa.worker-type/v1",
+  "id": "cyber-lab",
+  "name_tr": "Cyber Laboratuvar Worker",
+  "modules": [
+    "cyber"
+  ],
+  "declared_platforms": [
+    "windows",
+    "linux"
+  ],
+  "purpose_tr": "Engagement kapsamındaki güvenlik adapter'larını ve izole laboratuvar emülasyonlarını çalıştırır.",
+  "tool_families": [
+    "cyber"
+  ],
+  "requirements_tr": [
+    "geçerli engagement/gerçek hedef çözümleme",
+    "engine/rule/data lisansları",
+    "resetlenebilir lab ve ayrı verifier oturumu"
+  ],
+  "isolation_contract_tr": "Egress ve hedef denetimi her bağlantıda; scope/izin süresi/etki/rate limit broker tarafından uygulanır.",
+  "job_contract": {
+    "required": [
+      "task_id",
+      "invocation_id",
+      "attempt_id",
+      "lease_generation",
+      "permit_ref",
+      "arguments_digest",
+      "input_artifact_refs",
+      "limits",
+      "cancellation_ref"
+    ],
+    "returns": [
+      "status",
+      "effect_status",
+      "exit_code",
+      "artifact_refs",
+      "evidence_refs",
+      "resource_usage",
+      "error_category",
+      "cleanup_status",
+      "duration_ms"
+    ]
+  },
+  "resource_policy": {
+    "authority": "task_and_broker",
+    "limits": [
+      "wall_time",
+      "cpu",
+      "ram",
+      "disk",
+      "output_bytes",
+      "network_scope",
+      "gpu_vram_when_applicable"
+    ],
+    "unbounded_jobs": false
+  },
+  "lifecycle": [
+    "registered",
+    "ready",
+    "leased",
+    "running",
+    "cancelling",
+    "reconciling",
+    "finished",
+    "quarantined"
+  ],
+  "acceptance_checks_tr": [
+    "redirect/DNS/proxy scope kaçışı engellenir",
+    "fresh tekrar ve negatif kontrol",
+    "expired permit durur",
+    "cleanup ve log redaction kanıtlı"
+  ],
+  "implementation": {
+    "definition": "complete",
+    "executor": "not_implemented",
+    "local_acceptance": "not_run",
+    "live_acceptance": "not_run"
+  }
+}

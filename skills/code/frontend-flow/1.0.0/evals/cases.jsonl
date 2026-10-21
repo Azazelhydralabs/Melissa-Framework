@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"observations": {"keyboard": true, "focus": true, "responsive": true, "errors": true}}, "expected_status": "candidate"}
+{"id": "negative", "input": {"observations": {"keyboard": true}}, "expected_not_status": "candidate"}

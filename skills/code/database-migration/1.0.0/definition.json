@@ -1,0 +1,130 @@
+{
+  "schema_version": "melissa.skill-definition/v1",
+  "id": "melissa.code.skill.database-migration",
+  "module": "code",
+  "name_tr": "Database migration ve concurrency",
+  "description_tr": "Şema değişiminin veri doğruluğunu, yarış davranışını ve kesinti sonrası durumunu koru.",
+  "use_when": [
+    "migration",
+    "database_concurrency"
+  ],
+  "manifest": {
+    "entrypoint": "SKILL.md",
+    "category": "coding",
+    "trust_level": "first_party",
+    "routing": {
+      "intents": [
+        "migration",
+        "database_concurrency"
+      ],
+      "priority": 80
+    },
+    "required_tools": [
+      "fs.read",
+      "code.tests"
+    ],
+    "required_capabilities": [
+      "workspace.read"
+    ],
+    "prerequisites": [
+      "host-reviewed captured package and exact task policy"
+    ],
+    "runtime": {
+      "timeout_seconds": 1800,
+      "max_iterations": 64,
+      "max_parallel_tools": 2,
+      "max_cost_micro_usd": 1250000
+    },
+    "input_schema_ref": "schemas/input.json",
+    "output_schema_ref": "schemas/output.json",
+    "verification": [
+      {
+        "check": "source_bound_real_tool_evidence",
+        "required": true
+      },
+      {
+        "check": "negative_case_and_scope_preservation",
+        "required": true
+      }
+    ],
+    "evaluation": {
+      "dataset_ref": "evals/cases.jsonl",
+      "assertions_ref": "evals/assertions.json",
+      "min_success_rate": 1.0
+    }
+  },
+  "files": [
+    {
+      "path": "SKILL.md",
+      "content_digest": "blake3:4127c0af7eabff374aa7e2df292d8077bc9f0c9d56c8d5898f676f24c63e41b7",
+      "role": "entrypoint"
+    },
+    {
+      "path": "assets/report.md",
+      "content_digest": "blake3:434f08a44509eefcc818e8ffa20949e9a344e1c8c07e640d249ff64199dbec62",
+      "role": "template"
+    },
+    {
+      "path": "evals/assertions.json",
+      "content_digest": "blake3:fbb8229e454a30fb69702cf8fe35227645c7137f88b374b104ae1e4d19a44786",
+      "role": "evaluation"
+    },
+    {
+      "path": "evals/cases.jsonl",
+      "content_digest": "blake3:196d0939da6eb0153e46f51de8e363dc40d3e87602a3b4d19a96bfcfd5ec1c5b",
+      "role": "evaluation"
+    },
+    {
+      "path": "references/acceptance.md",
+      "content_digest": "blake3:9e4363c8e4679bacae345dbe998225712a6e3f39fdb7fe5e3a3ecd71b6fa17b9",
+      "role": "reference"
+    },
+    {
+      "path": "schemas/input.json",
+      "content_digest": "blake3:180f30d6751b0fa2c845435196bc57ecf8e52b2ccfc27a1b86b784600e13f08f",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/output.json",
+      "content_digest": "blake3:a839a305ab153d5e549af04db0cde7691722bf780b16c92c7a98fabf76111969",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/report-input.json",
+      "content_digest": "blake3:057757f75287575178678502c2c5e5b7a09576c66dc45db4c4549721ae85024a",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/report-output.json",
+      "content_digest": "blake3:138a8766305285af49d60d11ce265b4a9977d6c4f8be210a5224ac7dc8428a08",
+      "role": "schema"
+    },
+    {
+      "path": "scripts/assess.py",
+      "content_digest": "blake3:0f0e1dab9ef55883357fb1e9aa5a526cc2edb3c524ff9e43557db3bccd9adfdb",
+      "role": "script"
+    },
+    {
+      "path": "tests/README.md",
+      "content_digest": "blake3:a173a375de7832634250ba4ee11d2be8505ad3ce5d1ebdf868c49822adf9c6f2",
+      "role": "test"
+    }
+  ],
+  "scripts": [
+    {
+      "file_path": "scripts/assess.py",
+      "interpreter_ref": "code06-pinned-python/3.13.5",
+      "input_schema_ref": "schemas/input.json",
+      "output_schema_ref": "schemas/output.json",
+      "required_capabilities": [],
+      "timeout_seconds": 30
+    }
+  ],
+  "templates": [
+    {
+      "file_path": "assets/report.md",
+      "input_schema_ref": "schemas/report-input.json",
+      "output_schema_ref": "schemas/report-output.json"
+    }
+  ]
+}

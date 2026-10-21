@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:skill-version:v1",
+  "description": "CODE-01 structural definition only. Rust semantic validation is additionally required; this schema grants no authority and implements no runtime.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.skill-version/v1"
+    },
+    "pin": {
+      "$ref": "#/$defs/skill_pin"
+    },
+    "definition_digest": {
+      "type": "string",
+      "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+    },
+    "publisher_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "enum": [
+        "draft",
+        "tested",
+        "evaluated",
+        "reviewed",
+        "signed_release",
+        "revoked"
+      ]
+    },
+    "required_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "evaluation_digest": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "review_artifact_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "signature": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/signature"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "revocation_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "rollback_to": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/skill_pin"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "pin",
+    "definition_digest",
+    "publisher_id",
+    "state",
+    "required_capabilities"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "skill_pin": {
+      "type": "object",
+      "properties": {
+        "skill_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "semantic_version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^(blake3|sha256):[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "skill_id",
+        "semantic_version",
+        "content_digest"
+      ],
+      "additionalProperties": false
+    },
+    "signature": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "key_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "signature_artifact_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "algorithm",
+        "key_id",
+        "signature_artifact_ref"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

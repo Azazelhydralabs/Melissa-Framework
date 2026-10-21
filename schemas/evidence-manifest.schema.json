@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:evidence-manifest:v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.evidence-manifest/v1"
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "output_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "invocation_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "tool_versions": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "environment_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verifier_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verifier_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "protected_acceptance_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_contract_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verification_status": {
+      "enum": [
+        "passed",
+        "failed",
+        "inconclusive"
+      ]
+    },
+    "acceptance_results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "criterion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "criterion",
+          "passed",
+          "evidence_refs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "developer_intervention": {
+      "type": "boolean"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "task_id",
+    "run_id",
+    "input_digest",
+    "output_digest",
+    "artifact_refs",
+    "invocation_ids",
+    "tool_versions",
+    "environment_ref",
+    "verifier_id",
+    "verifier_version",
+    "protected_acceptance_digest",
+    "acceptance_contract_digest",
+    "verification_status",
+    "acceptance_results",
+    "developer_intervention",
+    "created_at"
+  ],
+  "additionalProperties": false
+}

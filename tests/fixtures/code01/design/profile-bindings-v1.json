@@ -1,0 +1,13 @@
+{
+  "schema_version": "melissa.profile-bindings/v1",
+  "profile_id": "melissa.code.debugger",
+  "profile_schema_version": "melissa.agent-profile/v1",
+  "state": "unresolved",
+  "skills": [],
+  "context_contract_ref": null,
+  "runtime_limits": null,
+  "unresolved_reasons": [
+    "Sample fixture only. No real runtime binding or capability readiness is claimed.",
+    "CODE-07 skill/context resolution has not been implemented."
+  ]
+}

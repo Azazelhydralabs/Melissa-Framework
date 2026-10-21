@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"requests": [{"tenant": "a", "key": "k", "effect": "e"}, {"tenant": "a", "key": "k", "effect": "e"}]}, "expected_status": "candidate"}
+{"id": "negative", "input": {"requests": [{"tenant": "a", "key": "k", "effect": "e1"}, {"tenant": "a", "key": "k", "effect": "e2"}]}, "expected_not_status": "candidate"}

@@ -1,0 +1,11 @@
+* text=auto
+*.rs text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.ps1 text eol=lf
+*.png binary
+Cargo.lock text eol=lf
+skills/** -text

@@ -1,0 +1,35 @@
+{
+  "schema_version": "melissa.task-contract/v1",
+  "task_id": "fixture:task:code:1",
+  "module": "code",
+  "goal": "Static contract example only; no work is executed.",
+  "workspace_ref": "fixture:workspace:owned",
+  "input_snapshot_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "acceptance_contract_digest": "blake3:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "acceptance_criteria": [
+    "protected boundary regression passes"
+  ],
+  "selected_profile_ids": [
+    "melissa.code.debugger"
+  ],
+  "allowed_resource_ids": [
+    "fixture:workspace:owned"
+  ],
+  "allowed_effects": [
+    "workspace.read",
+    "process.execute"
+  ],
+  "authorization_refs": [
+    "fixture:authorization:user-task"
+  ],
+  "limits": {
+    "max_wall_time_ms": 60000,
+    "max_cost_micro_usd": 1000000,
+    "max_input_tokens": 20000,
+    "max_output_tokens": 2000,
+    "max_parallel_jobs": 1,
+    "max_disk_bytes": 1048576,
+    "max_output_bytes": 65536
+  },
+  "authority_source": "user_task_and_rust_policy"
+}

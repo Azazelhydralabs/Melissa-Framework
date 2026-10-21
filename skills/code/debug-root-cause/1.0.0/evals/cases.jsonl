@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"lines": ["error at 0x1234 value 12345", "error at 0x5678 value 67890"]}, "expected_status": "candidate"}
+{"id": "negative", "input": {"lines": ["all quiet"]}, "expected_not_status": "candidate"}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "findings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "findings"
+  ],
+  "additionalProperties": false
+}

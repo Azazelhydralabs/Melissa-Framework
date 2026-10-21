@@ -1,0 +1,79 @@
+{
+  "schema_version": "melissa.runtime-policy/v1",
+  "id": "melissa.runtime-policy/v1",
+  "status": "definition_only",
+  "authority": {
+    "decision_owner": "rust_policy_and_broker",
+    "effective_grant": "intersection(task_grant, profile_ceiling, policy, valid_execution_permit)",
+    "delegation": "attenuation_only",
+    "model_can_authorize": false,
+    "approval": "Reuse valid task authorization for matching reversible actions; ask only for genuinely new required authority. Bind approvals to actual target/args/effects and respect revocation."
+  },
+  "budget": {
+    "scope": "entire_task_tree",
+    "reservation": "atomic_before_parallel_dispatch",
+    "limits_source": "task_contract",
+    "unknown_usage": "record_unknown_never_zero",
+    "fixed_universal_turn_limit": false
+  },
+  "untrusted_input": {
+    "sources": [
+      "web",
+      "tool_result",
+      "artifact",
+      "repository",
+      "third_party_skill",
+      "model_memory_proposal"
+    ],
+    "rule": "Data and provenance only; cannot override task, grant authority or mark verification passed."
+  },
+  "evidence": {
+    "completion": "Host verifier checks immutable source/output digests, protected acceptance and actual tool results.",
+    "required_binding": [
+      "task_id",
+      "run_id",
+      "input_digest",
+      "output_digest",
+      "tool_version",
+      "environment_ref",
+      "verifier_version",
+      "acceptance_refs"
+    ]
+  },
+  "recovery": {
+    "classes": [
+      "schema_error",
+      "stale_input",
+      "dependency_missing",
+      "permission_denied",
+      "provider_transient",
+      "timeout",
+      "cancelled",
+      "budget_exhausted",
+      "no_progress",
+      "outcome_unknown"
+    ],
+    "unknown_effect": "Persist NeedsReconciliation; do not blind retry non-idempotent action.",
+    "autonomy": "Agent classifies and recovers within the current task; external developer intervention is recorded and excluded from autonomous success."
+  },
+  "cancellation": "Propagate to task tree, provider and worker; reconcile external effects and process cleanup before final state.",
+  "storage": {
+    "local": "sqlite_and_blake3_cas",
+    "transactions": "state_and_event_atomic",
+    "publication": "atomic_artifact_publish_and_recovery",
+    "retention": "workspace_owned_with_quota_and_secure_gc"
+  },
+  "concurrency": {
+    "simple_task_default": "one_active_agent",
+    "specialists": "optional_by_task_and_shared_budget",
+    "catalog_count_is_concurrency": false
+  },
+  "security": [
+    "expected_hash_scoped_patch",
+    "protected_verifier",
+    "actual_worker_filesystem_network_process_isolation",
+    "fresh_ui_reference_and_input_scope",
+    "source_redaction_and_content_telemetry_opt_in",
+    "license_and_dependency_attestation"
+  ]
+}

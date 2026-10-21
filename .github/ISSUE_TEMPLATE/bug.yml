@@ -1,0 +1,18 @@
+name: Hata bildirimi
+description: Tekrarlanabilir bir sorunu bildirin.
+body:
+  - type: markdown
+    attributes:
+      value: Erişim bilgisi, özel adres veya kişisel çalışma kaydı paylaşmayın.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Beklenen ve gözlenen davranış
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Tekrarlama adımları ve ortam
+    validations:
+      required: true

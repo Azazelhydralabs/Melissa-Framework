@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"runs": [{"a": "passed", "b": "passed"}, {"a": "passed", "b": "passed"}]}, "expected_status": "candidate"}
+{"id": "negative", "input": {"runs": [{"a": "passed"}, {"a": "failed"}]}, "expected_not_status": "candidate"}

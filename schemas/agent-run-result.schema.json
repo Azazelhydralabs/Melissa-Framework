@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "melissa:agent-run-result:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "task_id",
+    "status",
+    "answer",
+    "request_ids",
+    "tool_calls",
+    "artifact_refs",
+    "requires_reconciliation",
+    "task_accepted"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "melissa.agent-run-result/v1"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "final_candidate",
+        "refused",
+        "cancelled",
+        "deadline",
+        "budget_exhausted",
+        "request_limit",
+        "turn_limit",
+        "tool_limit",
+        "no_action",
+        "invalid_output",
+        "provider_failed",
+        "needs_authorization",
+        "needs_reconciliation"
+      ]
+    },
+    "answer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "request_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "tool_calls": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "requires_reconciliation": {
+      "type": "boolean"
+    },
+    "task_accepted": {
+      "const": false
+    }
+  },
+  "allOf": [
+    {
+      "else": {
+        "properties": {
+          "answer": {
+            "type": "null"
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "status": {
+            "const": "final_candidate"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "answer": {
+            "type": "string",
+            "pattern": "\\S",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "then": {
+        "properties": {
+          "requires_reconciliation": {
+            "const": true
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "status": {
+            "const": "needs_reconciliation"
+          }
+        }
+      }
+    }
+  ]
+}

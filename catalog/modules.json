@@ -1,0 +1,395 @@
+{
+  "schema_version": "melissa.module-catalog/v1",
+  "modules": [
+    {
+      "id": "core",
+      "order": 0,
+      "profile_count": 6,
+      "profile_ids": [
+        "melissa.core.coordinator",
+        "melissa.core.data-documents",
+        "melissa.core.independent-qa",
+        "melissa.core.integration",
+        "melissa.core.planner",
+        "melissa.core.researcher"
+      ],
+      "implementation_dependencies": [],
+      "implementation_order_predecessor": null,
+      "backlog_ids": [
+        "CORE-1000",
+        "CORE-1001",
+        "CORE-1002",
+        "CORE-1003",
+        "CORE-1004",
+        "CORE-1005",
+        "CORE-1006",
+        "CORE-1007",
+        "CORE-1008",
+        "CORE-1009",
+        "CORE-1010"
+      ],
+      "gate": {
+        "id": "GATE-CORE",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    },
+    {
+      "id": "code",
+      "order": 1,
+      "profile_count": 12,
+      "profile_ids": [
+        "melissa.code.architect",
+        "melissa.code.backend",
+        "melissa.code.database",
+        "melissa.code.debugger",
+        "melissa.code.dependency-build",
+        "melissa.code.frontend",
+        "melissa.code.implementer",
+        "melissa.code.release-engineer",
+        "melissa.code.repository-analyst",
+        "melissa.code.reviewer",
+        "melissa.code.security-reviewer",
+        "melissa.code.test-engineer"
+      ],
+      "implementation_dependencies": [
+        "core"
+      ],
+      "implementation_order_predecessor": "core",
+      "backlog_ids": [
+        "CODE-1011",
+        "CODE-1012",
+        "CODE-1013",
+        "CODE-1014",
+        "CODE-1015",
+        "CODE-1016",
+        "CODE-1017",
+        "CODE-1018",
+        "CODE-1019",
+        "CODE-1020",
+        "CODE-1021",
+        "CODE-1022",
+        "CODE-1023",
+        "CODE-1024"
+      ],
+      "gate": {
+        "id": "GATE-CODE",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    },
+    {
+      "id": "cyber",
+      "order": 2,
+      "profile_count": 25,
+      "profile_ids": [
+        "melissa.cyber.api-appsec",
+        "melissa.cyber.asset-inventory",
+        "melissa.cyber.attack-graph",
+        "melissa.cyber.authentication",
+        "melissa.cyber.authorization",
+        "melissa.cyber.cloud-security",
+        "melissa.cyber.container-security",
+        "melissa.cyber.dependency-security",
+        "melissa.cyber.detection-validation",
+        "melissa.cyber.emulation-planner",
+        "melissa.cyber.engagement-controller",
+        "melissa.cyber.finding-verifier",
+        "melissa.cyber.fuzzing",
+        "melissa.cyber.linux-security",
+        "melissa.cyber.network-security",
+        "melissa.cyber.remediation",
+        "melissa.cyber.researcher",
+        "melissa.cyber.reverse-engineering",
+        "melissa.cyber.source-security",
+        "melissa.cyber.surface-mapper",
+        "melissa.cyber.technology-analyst",
+        "melissa.cyber.threat-intelligence",
+        "melissa.cyber.vulnerability-triage",
+        "melissa.cyber.web-appsec",
+        "melissa.cyber.windows-security"
+      ],
+      "implementation_dependencies": [
+        "core",
+        "code"
+      ],
+      "implementation_order_predecessor": "code",
+      "backlog_ids": [
+        "CYBER-1025",
+        "CYBER-1026",
+        "CYBER-1027",
+        "CYBER-1028",
+        "CYBER-1029",
+        "CYBER-1030",
+        "CYBER-1031",
+        "CYBER-1032",
+        "CYBER-1033",
+        "CYBER-1034"
+      ],
+      "gate": {
+        "id": "GATE-CYBER",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    },
+    {
+      "id": "science",
+      "order": 3,
+      "profile_count": 6,
+      "profile_ids": [
+        "melissa.science.mathematician",
+        "melissa.science.reproducibility",
+        "melissa.science.researcher",
+        "melissa.science.simulation",
+        "melissa.science.statistics",
+        "melissa.science.verifier"
+      ],
+      "implementation_dependencies": [
+        "core",
+        "code",
+        "cyber"
+      ],
+      "implementation_order_predecessor": "cyber",
+      "backlog_ids": [
+        "SCIENCE-1035",
+        "SCIENCE-1036",
+        "SCIENCE-1037",
+        "SCIENCE-1038",
+        "SCIENCE-1039",
+        "SCIENCE-1040"
+      ],
+      "gate": {
+        "id": "GATE-SCIENCE",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    },
+    {
+      "id": "game",
+      "order": 4,
+      "profile_count": 7,
+      "profile_ids": [
+        "melissa.game.asset-scene",
+        "melissa.game.build-performance",
+        "melissa.game.designer",
+        "melissa.game.gameplay-qa",
+        "melissa.game.rig-animation",
+        "melissa.game.unity-engineer",
+        "melissa.game.unreal-engineer"
+      ],
+      "implementation_dependencies": [
+        "core",
+        "code",
+        "cyber",
+        "science"
+      ],
+      "implementation_order_predecessor": "science",
+      "backlog_ids": [
+        "GAME-1041",
+        "GAME-1042",
+        "GAME-1043",
+        "GAME-1044",
+        "GAME-1045",
+        "GAME-1046",
+        "GAME-1047"
+      ],
+      "gate": {
+        "id": "GATE-GAME",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    },
+    {
+      "id": "repack",
+      "order": 5,
+      "profile_count": 3,
+      "profile_ids": [
+        "melissa.repack.compression-planner",
+        "melissa.repack.delta-integrity",
+        "melissa.repack.file-analysis"
+      ],
+      "implementation_dependencies": [
+        "core",
+        "code",
+        "game"
+      ],
+      "implementation_order_predecessor": "game",
+      "backlog_ids": [
+        "REPACK-1048",
+        "REPACK-1049",
+        "REPACK-1050",
+        "REPACK-1051",
+        "REPACK-1052",
+        "REPACK-1053"
+      ],
+      "gate": {
+        "id": "GATE-REPACK",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    },
+    {
+      "id": "fit",
+      "order": 6,
+      "profile_count": 3,
+      "profile_ids": [
+        "melissa.fit.installation-qa",
+        "melissa.fit.installer-engineer",
+        "melissa.fit.release-distribution"
+      ],
+      "implementation_dependencies": [
+        "core",
+        "code",
+        "repack"
+      ],
+      "implementation_order_predecessor": "repack",
+      "backlog_ids": [
+        "FIT-1054",
+        "FIT-1055",
+        "FIT-1056",
+        "FIT-1057",
+        "FIT-1058",
+        "FIT-1059"
+      ],
+      "gate": {
+        "id": "GATE-FIT",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    },
+    {
+      "id": "grid",
+      "order": 7,
+      "profile_count": 0,
+      "profile_ids": [],
+      "implementation_dependencies": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ],
+      "implementation_order_predecessor": "fit",
+      "backlog_ids": [
+        "GRID-1060",
+        "GRID-1061",
+        "GRID-1062",
+        "GRID-1063",
+        "GRID-1064",
+        "GRID-1065",
+        "GRID-1066"
+      ],
+      "gate": {
+        "id": "GATE-GRID",
+        "requires": [
+          "all_module_backlog_accepted",
+          "required_previous_module_regression",
+          "local_and_live_evidence_separate",
+          "no_unresolved_false_completion"
+        ],
+        "status": "not_run",
+        "evidence_refs": []
+      },
+      "status": {
+        "catalog": "locally_verified",
+        "implementation": "not_started",
+        "local_acceptance": "not_run",
+        "live_acceptance": "not_run",
+        "product_acceptance": "not_run"
+      }
+    }
+  ]
+}

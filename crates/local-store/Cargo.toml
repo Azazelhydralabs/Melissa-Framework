@@ -1,0 +1,19 @@
+[package]
+name = "melissa-local-store"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+melissa-core-contracts = { path = "../core-contracts" }
+serde.workspace = true
+serde_json.workspace = true
+rusqlite.workspace = true
+blake3.workspace = true
+chacha20poly1305.workspace = true
+getrandom.workspace = true
+zeroize.workspace = true
+tempfile.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

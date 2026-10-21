@@ -1,0 +1,104 @@
+{
+  "schema_version": "melissa.context-contract/v1",
+  "id": "sample-context-definition-only",
+  "task_id": "sample-task",
+  "namespace": "sample-project-contract-only",
+  "max_context_tokens": 2000,
+  "reserved_output_tokens": 500,
+  "items": [
+    {
+      "id": "sample-system",
+      "section": "system_contract",
+      "source_kind": "system_contract",
+      "trust": "host_contract",
+      "source_ref": "sample-system",
+      "source_version": "1.0.0",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "namespace": "sample-project-contract-only",
+      "token_count": 100,
+      "full_content": true
+    },
+    {
+      "id": "sample-task",
+      "section": "task_contract",
+      "source_kind": "task_contract",
+      "trust": "user_task",
+      "source_ref": "sample-task",
+      "source_version": "1.0.0",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "namespace": "sample-project-contract-only",
+      "token_count": 100,
+      "full_content": true
+    },
+    {
+      "id": "sample-budget",
+      "section": "remaining_budget",
+      "source_kind": "budget",
+      "trust": "untrusted_data",
+      "source_ref": "sample-budget",
+      "source_version": "1.0.0",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "namespace": "sample-project-contract-only",
+      "token_count": 100,
+      "full_content": true
+    },
+    {
+      "id": "sample-output",
+      "section": "output_schema",
+      "source_kind": "output_schema",
+      "trust": "untrusted_data",
+      "source_ref": "sample-output",
+      "source_version": "1.0.0",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "namespace": "sample-project-contract-only",
+      "token_count": 100,
+      "full_content": true
+    },
+    {
+      "id": "sample-skill",
+      "section": "relevant_skills",
+      "source_kind": "skill",
+      "trust": "untrusted_data",
+      "source_ref": "sample.code.debug",
+      "source_version": "1.0.0",
+      "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "namespace": "sample-project-contract-only",
+      "token_count": 100,
+      "full_content": true
+    }
+  ],
+  "selected_skills": [
+    {
+      "pin": {
+        "skill_id": "sample.code.debug",
+        "semantic_version": "1.0.0",
+        "content_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "context_item_id": "sample-skill"
+    }
+  ],
+  "continuation": {
+    "checkpoint_ref": "sample-checkpoint-not-persisted",
+    "task_contract_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "workspace_snapshot_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "authorization_ref": "sample-authorization-not-authenticated",
+    "cancellation_ref": "sample-cancellation",
+    "remaining_budget_ref": "sample-budget",
+    "open_effect_refs": [
+      "sample-unknown-effect-needs-reconciliation"
+    ],
+    "rejected_hypotheses": [
+      "Sample rejected hypothesis; no experiment was run"
+    ],
+    "open_issue_refs": [
+      "sample-unresolved-contract-only"
+    ]
+  },
+  "task_binding": {
+    "module": "code",
+    "goal": "Sample context binding only; no task execution or acceptance claimed",
+    "workspace_ref": "sample-workspace",
+    "input_snapshot_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "acceptance_contract_digest": "blake3:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  }
+}

@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"requirements": ["r1"], "coverage": {"r1": ["test-positive", "test-negative"]}}, "expected_status": "candidate"}
+{"id": "negative", "input": {"requirements": ["r1", "r2"], "coverage": {"r1": ["test"]}}, "expected_not_status": "candidate"}

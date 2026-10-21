@@ -1,0 +1,2 @@
+{"id": "positive", "input": {"findings": [{"file": "src/a.rs", "line": 3, "evidence": "artifact:1", "reproducer": "case1"}]}, "expected_status": "candidate"}
+{"id": "negative", "input": {"findings": [{"file": "src/a.rs", "line": 3}]}, "expected_not_status": "candidate"}

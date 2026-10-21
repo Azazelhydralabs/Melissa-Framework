@@ -1,0 +1,22 @@
+{
+  "schema_version": "melissa.worker-job/v1",
+  "task_id": "fixture:task:code:1",
+  "invocation_id": "fixture:invocation:1",
+  "attempt_id": "fixture:attempt:1",
+  "lease_generation": 1,
+  "permit_ref": "fixture:permit:one",
+  "arguments_digest": "blake3:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "input_artifact_refs": [
+    "fixture:artifact:source"
+  ],
+  "limits": {
+    "max_wall_time_ms": 1000,
+    "max_cpu_time_ms": 500,
+    "max_memory_bytes": 1048576,
+    "max_disk_bytes": 1048576,
+    "max_output_bytes": 65536,
+    "max_gpu_vram_bytes": 0,
+    "network_scope": []
+  },
+  "cancellation_ref": "fixture:cancellation:1"
+}

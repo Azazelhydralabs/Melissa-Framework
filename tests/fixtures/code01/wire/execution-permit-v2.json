@@ -1,0 +1,22 @@
+{
+  "schema_version": "melissa.execution-permit/v2",
+  "permit_id": "fixture:permit:one",
+  "task_id": "fixture:task:code:1",
+  "principal_id": "fixture:principal:worker",
+  "tool_id": "code.tests",
+  "resource_id": "fixture:workspace:owned",
+  "arguments_digest": "blake3:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "allowed_effects": [
+    "process.execute"
+  ],
+  "not_before_unix_ms": 1000,
+  "expires_at_unix_ms": 2000,
+  "max_invocations": 1,
+  "issuer": "fixture:policy",
+  "audience": "fixture:worker:generic",
+  "nonce": "fixture:nonce:unique",
+  "policy_version": "fixture:policy:1",
+  "authorization_ref": "fixture:authorization:user-task",
+  "signature_or_mac": "fixture-only-not-a-real-signature",
+  "max_duration_ms": 1000
+}

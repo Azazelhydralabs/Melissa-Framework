@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "melissa.process-exec/v2",
+  "title": "Typed process.exec request; shape validation grants no execution authority",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "executable",
+    "argv",
+    "cwd",
+    "env",
+    "limits",
+    "effects",
+    "worker_type"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "melissa.process-exec/v2"
+    },
+    "executable": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "pattern": "^(?:[A-Za-z]:[\\\\/]|/(?!/))"
+    },
+    "argv": {
+      "type": "array",
+      "maxItems": 1024,
+      "items": {
+        "type": "string",
+        "maxLength": 65536,
+        "pattern": "^[^\\u0000]*$"
+      }
+    },
+    "cwd": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 65536,
+      "pattern": "^(?![/\\\\]|.*:)(?!.*(?:^|[/\\\\])\\.\\.(?:[/\\\\]|$))[^\\u0000]+$"
+    },
+    "env": {
+      "type": "object",
+      "maxProperties": 128,
+      "propertyNames": {
+        "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+        "not": {
+          "pattern": "^(?:[Ss][Yy][Ss][Tt][Ee][Mm][Rr][Oo][Oo][Tt]|[Ll][Oo][Cc][Aa][Ll][Aa][Pp][Pp][Dd][Aa][Tt][Aa]|[Tt][Ee][Mm][Pp]|[Tt][Mm][Pp]|[Pp][Aa][Tt][Hh]|[Pp][Aa][Tt][Hh][Ee][Xx][Tt]|[Cc][Oo][Mm][Ss][Pp][Ee][Cc]|[Ww][Ii][Nn][Dd][Ii][Rr]|[Ss][Yy][Ss][Tt][Ee][Mm][Dd][Rr][Ii][Vv][Ee]|[Uu][Ss][Ee][Rr][Pp][Rr][Oo][Ff][Ii][Ll][Ee]|[Hh][Oo][Mm][Ee][Dd][Rr][Ii][Vv][Ee]|[Hh][Oo][Mm][Ee][Pp][Aa][Tt][Hh]|[Aa][Pp][Pp][Dd][Aa][Tt][Aa]|[Aa][Ww][Ss]_[Aa][Cc][Cc][Ee][Ss][Ss]_[Kk][Ee][Yy]_[Ii][Dd]|[Aa][Ww][Ss]_[Ss][Ee][Cc][Rr][Ee][Tt]_[Aa][Cc][Cc][Ee][Ss][Ss]_[Kk][Ee][Yy]|[Aa][Ww][Ss]_[Ss][Ee][Ss][Ss][Ii][Oo][Nn]_[Tt][Oo][Kk][Ee][Nn]|[Oo][Pp][Ee][Nn][Aa][Ii]_[Aa][Pp][Ii]_[Kk][Ee][Yy]|[Aa][Nn][Tt][Hh][Rr][Oo][Pp][Ii][Cc]_[Aa][Pp][Ii]_[Kk][Ee][Yy]|[Aa][Zz][Uu][Rr][Ee]_[Oo][Pp][Ee][Nn][Aa][Ii]_[Aa][Pp][Ii]_[Kk][Ee][Yy]|[Gg][Oo][Oo][Gg][Ll][Ee]_[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Tt][Ii][Oo][Nn]_[Cc][Rr][Ee][Dd][Ee][Nn][Tt][Ii][Aa][Ll][Ss]|[Gg][Ii][Tt][Hh][Uu][Bb]_[Tt][Oo][Kk][Ee][Nn]|[Gg][Hh]_[Tt][Oo][Kk][Ee][Nn])$"
+        }
+      },
+      "additionalProperties": {
+        "type": "string",
+        "maxLength": 65536,
+        "pattern": "^[^\\u0000]*$"
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "wall_time_ms",
+        "cpu_time_ms",
+        "cpu_mode",
+        "memory_bytes",
+        "disk_bytes",
+        "disk_mode",
+        "output_bytes",
+        "max_processes",
+        "network",
+        "cpu_rate_basis_points"
+      ],
+      "properties": {
+        "wall_time_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "cpu_time_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 922337203685477
+        },
+        "cpu_mode": {
+          "enum": [
+            "strict_total",
+            "monitored_total"
+          ]
+        },
+        "memory_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 18446744073709551615
+        },
+        "disk_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18446744073709551615
+        },
+        "disk_mode": {
+          "enum": [
+            "strict",
+            "monitored"
+          ]
+        },
+        "output_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 67108864
+        },
+        "max_processes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4294967295
+        },
+        "network": {
+          "const": "deny"
+        },
+        "cpu_rate_basis_points": {
+          "maximum": 10000,
+          "minimum": 1,
+          "type": "integer"
+        }
+      }
+    },
+    "effects": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    },
+    "worker_type": {
+      "const": "generic"
+    }
+  },
+  "$comment": "Rust additionally checks aggregate byte/UTF-16 bounds, NULs, duplicate case-insensitive environment names and native path rules. Broker authenticates exact task/profile/process/grant/policy and actual executor enforcement. Resolved scope also authenticates windows.appcontainer.job.environment/v2: no parent inheritance, reserved host OS/control/credential variables rejected, OS-derived SystemRoot plus Windows-remapped unique private-AppContainer LOCALAPPDATA and profile Temp TEMP/TMP; actual child values are execution evidence. Monitored CPU/disk require separate immutable host policy and reviewed host grant opt-in; they are not hard aggregate limits. No PATH search, network allow mode or script wrapper adapter is defined. Process v2 requires an explicit hard Job Object CPU rate. Strict aggregate lifetime CPU remains a distinct unsupported mode."
+}

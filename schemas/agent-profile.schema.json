@@ -1,0 +1,375 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:melissa:schema:agent-profile:v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "melissa.agent-profile/v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^melissa\\.(core|code|cyber|science|game|repack|fit)\\.[a-z0-9-]+$"
+    },
+    "module": {
+      "enum": [
+        "core",
+        "code",
+        "cyber",
+        "science",
+        "game",
+        "repack",
+        "fit"
+      ]
+    },
+    "name_tr": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose_tr": {
+      "type": "string",
+      "minLength": 1
+    },
+    "common_policy_ref": {
+      "const": "melissa.runtime-policy/v1"
+    },
+    "activation": {
+      "type": "object",
+      "properties": {
+        "when": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "avoid_when": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "when",
+        "avoid_when"
+      ],
+      "additionalProperties": false
+    },
+    "model_policy": {
+      "type": "object",
+      "properties": {
+        "class": {
+          "enum": [
+            "reasoning",
+            "coding",
+            "research",
+            "review",
+            "vision"
+          ]
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "provider_binding": {
+          "const": "task_policy"
+        },
+        "fallback": {
+          "const": "capability_checked_only"
+        }
+      },
+      "required": [
+        "class",
+        "required_capabilities",
+        "provider_binding",
+        "fallback"
+      ],
+      "additionalProperties": false
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "optional": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "required",
+        "optional"
+      ],
+      "additionalProperties": false
+    },
+    "outputs": {
+      "type": "object",
+      "properties": {
+        "schema_ref": {
+          "const": "melissa.agent-result/v1"
+        },
+        "required_domain_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_ref",
+        "required_domain_fields"
+      ],
+      "additionalProperties": false
+    },
+    "tool_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "worker_types": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "generic",
+          "browser",
+          "desktop-ui",
+          "science-cpu",
+          "science-gpu",
+          "blender",
+          "unreal-build",
+          "unreal-test",
+          "unity",
+          "cyber-lab",
+          "compression",
+          "windows-install-vm"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "authority": {
+      "type": "object",
+      "properties": {
+        "capability_ceiling": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "forbidden_effects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "approval_policy": {
+          "const": "task_scope_and_policy"
+        }
+      },
+      "required": [
+        "capability_ceiling",
+        "forbidden_effects",
+        "approval_policy"
+      ],
+      "additionalProperties": false
+    },
+    "procedure_tr": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 5,
+      "uniqueItems": true
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 3,
+          "uniqueItems": true
+        },
+        "independent_verifier_required": {
+          "type": "boolean"
+        },
+        "completion_rule_tr": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "checks",
+        "independent_verifier_required",
+        "completion_rule_tr"
+      ],
+      "additionalProperties": false
+    },
+    "recovery": {
+      "type": "object",
+      "properties": {
+        "on_tool_error_tr": {
+          "type": "string",
+          "minLength": 1
+        },
+        "on_no_progress_tr": {
+          "type": "string",
+          "minLength": 1
+        },
+        "on_unknown_effect_tr": {
+          "type": "string",
+          "minLength": 1
+        },
+        "on_budget_exhausted_tr": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "on_tool_error_tr",
+        "on_no_progress_tr",
+        "on_unknown_effect_tr",
+        "on_budget_exhausted_tr"
+      ],
+      "additionalProperties": false
+    },
+    "handoffs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "profile_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "when_tr": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "profile_id",
+          "when_tr",
+          "required_evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "evaluation_cases": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scenario_tr": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected_checks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 2,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "scenario_tr",
+          "expected_checks"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "system_prompt_tr": {
+      "type": "string",
+      "minLength": 700
+    },
+    "implementation": {
+      "const": {
+        "profile_definition": "complete",
+        "runtime": "not_implemented",
+        "tool_adapters": "not_implemented",
+        "live_acceptance": "not_run"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "module",
+    "name_tr",
+    "purpose_tr",
+    "common_policy_ref",
+    "activation",
+    "model_policy",
+    "inputs",
+    "outputs",
+    "tool_ids",
+    "worker_types",
+    "authority",
+    "procedure_tr",
+    "verification",
+    "recovery",
+    "handoffs",
+    "evaluation_cases",
+    "system_prompt_tr",
+    "implementation"
+  ],
+  "additionalProperties": false
+}
