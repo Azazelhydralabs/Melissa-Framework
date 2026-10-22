@@ -128,9 +128,13 @@ pub fn inspect_ustar(bytes: &[u8], limits: &Limits) -> Result<Vec<ImportedFile>>
                 "links, devices, PAX, sparse and extension records are not imported",
             ));
         }
+        // `seen` is ordered, so any entry beneath `name/` sorts first at or
+        // after that prefix: one range lookup instead of a scan per file.
+        let below = format!("{}/", paths::key(&name));
         if seen
-            .iter()
-            .any(|p| p.starts_with(&format!("{}/", paths::key(&name))))
+            .range(below.clone()..)
+            .next()
+            .is_some_and(|p| p.starts_with(&below))
         {
             return Err(Error::Denied("tar ancestor collision"));
         }
