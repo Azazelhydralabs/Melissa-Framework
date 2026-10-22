@@ -363,3 +363,69 @@ async fn actual_unknown_patch_effect_is_inspected_and_reconciled_without_executi
         b"new\n"
     );
 }
+#[tokio::test]
+async fn unknown_multi_file_patch_in_unsorted_order_reconciles_by_proposal_index() {
+    // Proposal order (b.txt, a.txt) differs from the broker's path-sorted write
+    // order; preimages must still be found by proposal index.
+    let (d, repo, mut s, p) = support::fixture(&["a.txt", "b.txt"]);
+    std::fs::write(repo.root_path().join("a.txt"), b"old a\n").unwrap();
+    std::fs::write(repo.root_path().join("b.txt"), b"old b\n").unwrap();
+    let mut files = vec![];
+    for (path, content) in [
+        ("b.txt", b"new b\n".as_slice()),
+        ("a.txt", b"new a\n".as_slice()),
+    ] {
+        let (version, old) = repo.read(path).unwrap();
+        files.push(FilePatch {
+            before: version,
+            edits: vec![ByteEdit {
+                start: 0,
+                end: old.len() as u64,
+                expected: old,
+                replacement: content.to_vec(),
+            }],
+        });
+    }
+    let call = ToolCall {
+        id: "unordered".into(),
+        name: "fs_patch".into(),
+        arguments: serde_json::to_string(&PatchProposal {
+            schema_version: "melissa.repository-patch/v1".into(),
+            root_identity: repo.root_identity().into(),
+            files,
+        })
+        .unwrap(),
+    };
+    s.put_artifact(
+        &melissa_local_store::ArtifactRequest {
+            artifact_id: "unordered:receipt".into(),
+            task_id: p.task_id.clone(),
+            content_type: "application/json".into(),
+            logical_type: "fault_injection".into(),
+            schema_version: "v1".into(),
+            retain_until_ms: 0,
+            legal_hold: false,
+        },
+        b"injected unavailable receipt slot",
+    )
+    .unwrap();
+    let mut tools = dispatcher(repo, &s, p);
+    let outcome = tools
+        .execute(call, context("unordered"), Arc::new(AtomicBool::new(false)))
+        .await
+        .unwrap();
+    assert!(outcome.requires_reconciliation);
+    let repo = Repository::open_for_git(&d.path().join("repo"), Limits::default()).unwrap();
+    let resolved = melissa_recovery::reconcile::inspect_patch_effect(
+        &mut s,
+        &repo,
+        "task:code05-closeout",
+        "unordered",
+    )
+    .unwrap();
+    assert_eq!(resolved["proof"]["effect_disposition"], "postimage_present");
+    assert_eq!(
+        s.journal().invocation("unordered").unwrap().state,
+        melissa_core_contracts::InvocationState::Reconciled
+    );
+}
