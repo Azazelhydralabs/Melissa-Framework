@@ -664,10 +664,18 @@ impl Gateway {
                 let cost = if let Some(card) = &model.rate_card {
                     card.upper_bound(reserved_input, reserved_output)?
                 } else {
-                    task.contract
+                    let remaining = task
+                        .contract
                         .limits
                         .max_cost_micro_usd
-                        .saturating_sub(budget.charged_cost_micro_usd)
+                        .saturating_sub(budget.charged_cost_micro_usd);
+                    // The ledger rejects a zero-cost unpriced reservation as
+                    // Invalid, not Quota; an exhausted budget must stop here.
+                    if remaining == 0 {
+                        result.status = RunStatus::BudgetExhausted;
+                        return self.complete(result);
+                    }
+                    remaining
                 };
                 let reservation = ModelReservation {
                     schema_version: "melissa.model-reservation/v1".into(),
