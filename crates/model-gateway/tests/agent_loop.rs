@@ -278,6 +278,43 @@ fn gateway(store: LocalStore, http: &HttpFixture, policy: GatewayPolicy) -> Gate
     )
     .unwrap()
 }
+fn gateway_unpriced(store: LocalStore, http: &HttpFixture, policy: GatewayPolicy) -> Gateway {
+    Gateway::new(
+        store,
+        Catalog::load(&Path::new(env!("CARGO_MANIFEST_DIR")).join("../..")).unwrap(),
+        vec![ModelRegistration {
+            registration_id: "fixture-route".into(),
+            endpoint: ProviderEndpoint::new(
+                "fixture-provider".into(),
+                RESOURCE.into(),
+                AUTH.into(),
+                Protocol::OpenAiResponses,
+                EndpointTrust::LoopbackFixture,
+                &http.url,
+                ApiKey::new("fixture-not-a-secret".into()).unwrap(),
+            )
+            .unwrap(),
+            model_id: "fixture-model".into(),
+            capabilities: Capabilities {
+                tool_calling: true,
+                structured_output: true,
+                vision: false,
+                streaming: true,
+            },
+            categories: BTreeSet::from(["coding".into()]),
+            context_tokens: 1024,
+            max_output_tokens: 128,
+            timeout_ms: 5000,
+            max_concurrency: 4,
+            rate_card: None,
+            measurements: Measurements::default(),
+            slots: Arc::new(Semaphore::new(4)),
+        }],
+        policy,
+        true,
+    )
+    .unwrap()
+}
 fn spec(run: &str) -> RunSpec {
     RunSpec {
         run_id: run.into(),
@@ -1373,4 +1410,41 @@ async fn proven_connection_failure_before_send_has_zero_usage_and_no_unknown_hol
         original
     );
     g.store().integrity_check().unwrap();
+}
+
+#[tokio::test]
+async fn unpriced_model_with_exhausted_cost_budget_stops_as_budget_exhausted() {
+    let dir = tempfile::tempdir().unwrap();
+    let http = http_fixture(vec![HttpPlan::sse(text_response("never", false, true))]).await;
+    let mut st = store(&dir.path().join("store"), 100_000);
+    // Reserve the whole cost budget so nothing is left for the next request.
+    let task = st.journal().task(TASK).unwrap();
+    let reservation = ModelReservation {
+        schema_version: "melissa.model-reservation/v1".into(),
+        request_id: "pre".into(),
+        task_id: TASK.into(),
+        profile_id: PROFILE.into(),
+        provider_id: "x".into(),
+        model_id: "y".into(),
+        request_digest: format!("blake3:{}", "0".repeat(64)),
+        pricing_digest: None,
+        reserved_input_tokens: 0,
+        reserved_output_tokens: 0,
+        reserved_cost_micro_usd: 100_000,
+        created_at_unix_ms: melissa_execution_broker::unix_ms().unwrap(),
+    };
+    st.journal_mut()
+        .reserve_model_request(&reservation, task.record.version)
+        .unwrap();
+    let mut g = gateway_unpriced(st, &http, policy());
+    let result = g
+        .run(
+            &spec("unpriced"),
+            &mut FakeTools::default(),
+            Arc::new(AtomicBool::new(false)),
+        )
+        .await
+        .unwrap();
+    assert_eq!(result.status, RunStatus::BudgetExhausted);
+    assert_eq!(http.requests.load(Ordering::SeqCst), 0);
 }
