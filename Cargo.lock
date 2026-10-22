@@ -1061,6 +1061,7 @@ dependencies = [
  "melissa-execution-broker",
  "melissa-local-store",
  "melissa-model-gateway",
+ "memchr",
  "serde",
  "serde_json",
  "tempfile",

@@ -308,25 +308,33 @@ impl Repository {
         self.validate_snapshot(snapshot, cancel)?;
         let mut hits = Vec::new();
         let mut truncated = false;
+        // Linear-time substring search; comparing every window cost
+        // file size x needle length (up to 64 KiB) with no cancel point.
+        let finder = memchr::memmem::Finder::new(needle);
         for observed in &snapshot.files {
             check_cancel(cancel)?;
             let (version, bytes) = self.read(&observed.path)?;
             if version != *observed {
                 return Err(Error::Stale("search file changed"));
             }
-            for (pos, w) in bytes.windows(needle.len()).enumerate() {
-                if w == needle {
-                    if hits.len() == self.limits.max_search_hits {
-                        truncated = true;
-                        break;
-                    }
-                    hits.push(SearchHit {
-                        path: version.path.clone(),
-                        digest: version.digest.clone(),
-                        byte_offset: pos,
-                        line: bytes[..pos].iter().filter(|b| **b == b'\n').count() + 1,
-                    });
+            let (mut start, mut line, mut counted) = (0, 1, 0);
+            // Restart one byte past each hit so overlapping matches are kept.
+            while let Some(found) = finder.find(&bytes[start..]) {
+                check_cancel(cancel)?;
+                let pos = start + found;
+                if hits.len() == self.limits.max_search_hits {
+                    truncated = true;
+                    break;
                 }
+                line += memchr::memchr_iter(b'\n', &bytes[counted..pos]).count();
+                counted = pos;
+                hits.push(SearchHit {
+                    path: version.path.clone(),
+                    digest: version.digest.clone(),
+                    byte_offset: pos,
+                    line,
+                });
+                start = pos + 1;
             }
             if truncated {
                 break;
