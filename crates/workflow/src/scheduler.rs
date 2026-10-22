@@ -405,7 +405,12 @@ impl Scheduler {
     }
     pub fn check(&self, lease: &Lease) -> Result<()> {
         let s = self.state()?;
-        self.fresh(&s)?;
+        self.check_state(&s, lease)
+    }
+    /// Validates `lease` against one snapshot so a caller can commit against
+    /// that same snapshot instead of re-reading state after the check.
+    fn check_state(&self, s: &State, lease: &Lease) -> Result<()> {
+        self.fresh(s)?;
         let slot = s
             .slots
             .get(&lease.node)
@@ -586,8 +591,10 @@ impl Scheduler {
     /// Only native owned Gateway output may satisfy an agent node. Completion
     /// remains a candidate: a final task/product needs independent host checks.
     pub fn complete_native(&mut self, lease: &Lease) -> Result<State> {
-        self.check(lease)?;
+        // Read once: a second read after the check could miss a concurrent
+        // NeedsReconciliation/cancel and overwrite it as Candidate.
         let s = self.state()?;
+        self.check_state(&s, lease)?;
         let id = format!("model-run:{}:result", lease.run);
         let run: RunResult = parse(&self.store.get_artifact(&self.task, &id)?)?;
         require(
