@@ -161,12 +161,14 @@ impl ProviderEndpoint {
                 }
             }
             EndpointTrust::LoopbackFixture => {
-                if url.scheme() != "http"
-                    || !url
-                        .host_str()
-                        .and_then(|v| v.parse::<std::net::IpAddr>().ok())
-                        .is_some_and(|ip| ip.is_loopback())
-                {
+                // host() rather than host_str(): the latter keeps IPv6 brackets
+                // ("[::1]"), which never parse as an IpAddr.
+                let loopback = match url.host() {
+                    Some(url::Host::Ipv4(ip)) => ip.is_loopback(),
+                    Some(url::Host::Ipv6(ip)) => ip.is_loopback(),
+                    _ => false,
+                };
+                if url.scheme() != "http" || !loopback {
                     return Err(GatewayError::invalid(
                         "fixture requires an explicit loopback IP URL",
                     ));
