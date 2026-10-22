@@ -279,12 +279,14 @@ impl<'a> PatchBroker<'a> {
         {
             return Err(Error::Denied("stale or foreign patch capability"));
         }
-        let mut files: Vec<_> = permit.proposal.files.iter().collect();
-        files.sort_by_key(|p| paths::key(&p.before.path));
+        // Writes run in path order (lock ordering), but preimage/receipt ids keep
+        // the proposal index: reconciliation looks them up by proposal order.
+        let mut files: Vec<_> = permit.proposal.files.iter().enumerate().collect();
+        files.sort_by_key(|(_, p)| paths::key(&p.before.path));
         let mut locked = Vec::new();
         let mut total = 0u64;
         // Acquire and verify EVERY exclusive target before the first write.
-        for patch in files {
+        for (index, patch) in files {
             check_cancel(cancel)?;
             let mut file = self.repo.lock(&patch.before.path, true)?;
             let (current, before) = self.repo.read_locked(&mut file, &patch.before.path)?;
@@ -298,19 +300,18 @@ impl<'a> PatchBroker<'a> {
             if total > task.contract.limits.max_disk_bytes {
                 return Err(Error::Quota("task output bytes"));
             }
-            locked.push((file, current, before, after));
+            locked.push((index, file, current, before, after));
         }
-        for (i, (_, _, before, _)) in locked.iter().enumerate() {
+        for (index, _, _, before, _) in &locked {
             self.put(
-                &format!("{}:preimage:{i}", permit.invocation_id),
+                &format!("{}:preimage:{index}", permit.invocation_id),
                 "repository_preimage",
                 before,
             )?;
         }
         let predicted_files: Vec<_> = locked
             .iter()
-            .enumerate()
-            .map(|(i, (_, before, _, after))| AppliedFile {
+            .map(|(index, _, before, _, after)| AppliedFile {
                 before: before.clone(),
                 after: FileVersion {
                     path: before.path.clone(),
@@ -318,7 +319,7 @@ impl<'a> PatchBroker<'a> {
                     digest: digest(after),
                     bytes: after.len() as u64,
                 },
-                preimage_artifact_id: format!("{}:preimage:{i}", permit.invocation_id),
+                preimage_artifact_id: format!("{}:preimage:{index}", permit.invocation_id),
             })
             .collect();
         // Bound the result before committing dispatch, rather than discovering
@@ -409,7 +410,7 @@ impl<'a> PatchBroker<'a> {
         }
         let effect = (|| -> Result<PatchReceipt> {
             let mut applied = Vec::new();
-            for (i, (file, before, _, after)) in locked.iter_mut().enumerate() {
+            for (i, (index, file, before, _, after)) in locked.iter_mut().enumerate() {
                 check_cancel(cancel)?;
                 self.check_policy(&permit.proposal)?;
                 if self.store.journal().is_permit_revoked(&permit.permit_id)? {
@@ -441,7 +442,7 @@ impl<'a> PatchBroker<'a> {
                         digest: digest(&observed),
                         bytes: observed.len() as u64,
                     },
-                    preimage_artifact_id: format!("{}:preimage:{i}", permit.invocation_id),
+                    preimage_artifact_id: format!("{}:preimage:{index}", permit.invocation_id),
                 });
                 after_write(i)?;
             }
