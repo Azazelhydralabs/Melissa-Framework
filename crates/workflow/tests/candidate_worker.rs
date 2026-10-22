@@ -44,6 +44,9 @@ fn service(store: LocalStore, run: &str, fixed: bool) -> CandidateTests {
     )
     .unwrap()
 }
+// Runs the pinned worker image through the Windows Docker Desktop backend
+// (container-executor rejects every other host), like native_cancel.rs.
+#[cfg(windows)]
 #[tokio::test]
 async fn actual_native_developer_test_reports_false_positive_then_accepts_model_corrected_test() {
     let dir = tempfile::tempdir().unwrap();
