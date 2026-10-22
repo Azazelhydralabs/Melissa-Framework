@@ -268,3 +268,32 @@ fn reviewed_origin_is_exact_and_cannot_contain_credentials_or_paths() {
     changed.url = "https://attacker.example/v1/responses".parse().unwrap();
     assert!(HttpTransport::body(&changed, &request()).is_err());
 }
+
+#[test]
+fn loopback_fixture_accepts_ipv4_and_ipv6_loopback_only() {
+    let fixture = |url: &str| {
+        ProviderEndpoint::new(
+            "fixture".into(),
+            "resource".into(),
+            "auth".into(),
+            Protocol::OpenAiResponses,
+            EndpointTrust::LoopbackFixture,
+            url,
+            ApiKey::new("LOCAL_FIXTURE".into()).unwrap(),
+        )
+    };
+    for url in [
+        "http://127.0.0.1:8080/v1/responses",
+        "http://[::1]:8080/v1/responses",
+    ] {
+        assert!(fixture(url).is_ok(), "{url}");
+    }
+    for url in [
+        "http://localhost:8080/v1/responses",
+        "http://10.0.0.1:8080/v1/responses",
+        "http://[::2]:8080/v1/responses",
+        "https://[::1]:8080/v1/responses",
+    ] {
+        assert_eq!(fixture(url).unwrap_err().kind, ErrorKind::Invalid, "{url}");
+    }
+}
